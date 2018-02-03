@@ -1,0 +1,33 @@
+<div class="admin_flex_column_container">    
+  <h2>Listing Sub categories</h2>
+
+  <span><%= link "New Sub category", to: sub_category_path(@conn, :new) %></span>
+  
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Display name</th>
+        <th>Description</th>
+
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+  <%= for sub_category <- @sub_categories do %>
+      <tr>
+        <td class="text-right">
+          <span><%= link "Show", to: sub_category_path(@conn, :show, sub_category), class: "btn btn-default btn-xs" %></span>
+          <span><%= link "Edit", to: sub_category_path(@conn, :edit, sub_category), class: "btn btn-default btn-xs" %></span>
+          <span><%= link "Delete", to: sub_category_path(@conn, :delete, sub_category), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+        </td>
+    
+        <td><%= sub_category.name %></td>
+        <td><%= sub_category.display_name %></td>
+        <td><%= sub_category.description %></td>
+      </tr>
+  <% end %>
+    </tbody>
+  </table>
+
+</div>

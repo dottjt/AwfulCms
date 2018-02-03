@@ -1,0 +1,70 @@
+
+.letter__container {
+    padding-top: 2rem;
+
+    .title__container {
+        @include flex-center-column();            
+        padding: 1rem;
+        height: 6rem;
+        margin-bottom: 4rem; 
+        
+        .title {
+            // for mobile
+            background: white;
+            padding: 0.5rem;
+        }
+
+        img {u
+            width: 120px;
+        }    
+    }
+
+    form {
+        width: 100%;
+
+        h3 {
+            margin-bottom: 1rem!important;
+        }
+        
+        .field {
+            display: flex;
+        }
+
+        .field-description {
+            margin-bottom: 1rem;
+            .control {
+                width: 100%; 
+                height: 300px;
+                resize: none;
+
+            }
+        }
+
+        h4 {
+            margin-right: 1rem;
+        }
+
+        .submit {
+            width: 150px;
+            height: 2.5rem;
+
+            border: 1px solid white;
+            border-radius: 2px;
+            background: $primary-colour;
+
+            color: white;
+
+            cursor: pointer;
+        }
+}
+
+    .letter__outer {
+
+    }
+}
+
+.letter__container {
+    form {
+        width: 500px;
+    }   
+}     

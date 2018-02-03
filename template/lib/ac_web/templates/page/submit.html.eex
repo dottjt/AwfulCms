@@ -1,0 +1,27 @@
+<div class="submit__container full_width__container">
+
+    <div class="title__container">
+        <img class="image" src="<%= static_path(@conn, Application.get_env(:ac, :website_logo_svg))%>" alt="<%= Application.get_env(:ac, :website_name)%> Logo">
+        <h2 class="title">Product submit.</h2>
+    </div> 
+
+    <div class="text__container">
+        <%= raw Application.get_env(:ac, :submit_copy) %>
+    </div>
+
+    <div class="submit__error">
+        <%= if get_flash(@conn, :error) do %>
+            <%= get_flash(@conn, :error) %>
+        <% end %>  
+    </div>
+    
+    <div class="submit__form__container">
+        <%= if !get_flash(@conn, :success) do %>
+        <h3 class="submit__form__title">Product submit form</h3>
+            <%= render AcWeb.ProductView, "formSubmit.html", Map.put(assigns, :action, product_path(@conn, :submit_create)) %>    
+        <% else %>
+            <%= get_flash(@conn, :success) %>
+        <% end %>  
+    </div>
+    
+</div>

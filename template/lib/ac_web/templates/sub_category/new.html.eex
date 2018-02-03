@@ -1,0 +1,7 @@
+<div class="admin_flex_column_container">        
+    <h2>New Sub category</h2>
+
+    <%= render "form.html", Map.put(assigns, :action, sub_category_path(@conn, :create)) %>
+
+    <span><%= link "Back", to: sub_category_path(@conn, :index) %></span>
+</div>

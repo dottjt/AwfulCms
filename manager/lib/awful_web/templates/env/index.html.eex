@@ -1,0 +1,30 @@
+<h2>Listing Env</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Value</th>
+      <th>Type</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for env <- @env do %>
+    <tr>
+      <td><%= env.name %></td>
+      <td><%= env.value %></td>
+      <td><%= env.type %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: env_path(@conn, :show, env), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: env_path(@conn, :edit, env), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: env_path(@conn, :delete, env), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Env", to: env_path(@conn, :new) %></span>

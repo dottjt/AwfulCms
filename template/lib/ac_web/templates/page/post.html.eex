@@ -1,0 +1,28 @@
+<div class="post__container sidebar_left__container">
+
+    <div class="introduction__container">
+        <div class="title__container">
+            <h2 class="title">
+                <%= @post.display_name %>
+            </h2>
+        </div>
+        <div class="author__container">
+            <h4 class="author">
+                <%= @post.author %>
+            </h4>
+        </div>
+
+        <div class="excerpt__container">
+            <p class="excerpt">
+                <%= @post.excerpt %>                    
+            </p> 
+        </div>
+    </div>
+                            
+    <%= if @post.post_type == "product_list" do %>
+        <%= render_partial "product_enum.html", %{ blog_description: true, products: @products, conn: @conn } %>                
+    <% end %>
+
+</div>
+        
+        

@@ -1,0 +1,28 @@
+<h2>Listing Websites</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Acronym</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for websites <- @websites do %>
+    <tr>
+      <td><%= websites.name %></td>
+      <td><%= websites.acronym %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: websites_path(@conn, :show, websites), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: websites_path(@conn, :edit, websites), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: websites_path(@conn, :delete, websites), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Websites", to: websites_path(@conn, :new) %></span>

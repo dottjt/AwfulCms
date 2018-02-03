@@ -1,0 +1,161 @@
+@import "global"; 
+
+
+.registration__container {
+    @include flex-center-column();
+    background: white;
+    padding: 2rem;
+    width: 80%;
+
+    
+}
+
+.about__container, .submit__container {
+    height: 100%;
+    padding-bottom: 4rem;
+
+    // for mobile
+    width: 100%;
+
+    .title__container {
+        @include flex-center-column();            
+        padding: 1rem;
+        height: 14rem;
+        
+        // for mobile
+        padding-bottom: 2rem;     
+        
+        .title {
+            // for mobile
+            background: white;
+            padding: 0.5rem;
+        }
+    }
+
+    .image {
+        width: 150px;
+    }
+
+    .text__container {
+        // for mobile
+        position: relative;
+        top: 2rem;
+        width: 90%;   
+    
+        p {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.2rem;
+            line-height: 1.8rem;
+
+            padding-left: 0.6rem;
+            padding-right: 0.6rem;        
+        }
+    }
+
+    .options {
+        padding-left: 0.6rem;
+        padding-right: 0.6rem;        
+        
+        a {
+            color: $primary-colour;
+        }
+    }
+
+}
+
+
+.submit__container {
+    .submit__form__container {
+        margin-top: 2rem;
+
+        .submit__form__title {
+            margin-top: 1rem!important;
+            margin-bottom: 1.5rem!important;
+            color: $primary-colour;
+            text-decoration: underline;
+        }
+    }    
+}
+
+.contact__container {
+    background: white;
+    padding: 1.5rem;
+    
+    h2 {
+        margin-bottom: 2rem!important;
+    }
+
+}
+
+.update__container {
+    padding-bottom: 10rem;
+
+    .title__container {
+        padding: 1rem;
+        padding-bottom: 0.5rem;
+
+        margin-bottom: 2rem;
+
+        .title {
+            text-align: center;
+        }
+    }
+
+    .header__container {
+        min-height: 80px;
+    }
+
+    .excerpt__container {
+        max-width: 570px;
+        padding: 0.5rem;
+        .excerpt {
+            text-align: left;
+        }
+    }
+
+}
+
+
+@media screen and (min-width: 510px) {
+    .about__container {
+        .text__container {
+            // reverse mobile
+            top: 1rem;
+        }
+    }
+
+    .about__container, .submit__container {
+        // reverse mobile 
+        width: 90%;    
+    }
+}
+    
+@media screen and (min-width: 800px) {
+    
+    .about__container, 
+    .submit__container, 
+    .update__container {
+        margin-top: 2rem; 
+        padding-top: 2rem;
+
+
+        .text__container {
+            margin-top: 0.5rem;
+            margin-left: 2rem;
+
+            // reverse mobile
+            width: 70%;
+        }
+
+        .title__container {
+            // reverse mobile
+            padding-bottom: 1rem;     
+            
+            .title {
+                background: none;
+            }  
+        }
+    }
+}
+
+

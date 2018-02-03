@@ -1,0 +1,32 @@
+<h2>Listing Updates</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Author</th>
+      <th>Display name</th>
+      <th>Excerpt</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for update <- @updates do %>
+    <tr>
+      <td><%= update.name %></td>
+      <td><%= update.author %></td>
+      <td><%= update.display_name %></td>
+      <td><%= update.excerpt %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: update_path(@conn, :show, update), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: update_path(@conn, :edit, update), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: update_path(@conn, :delete, update), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Update", to: update_path(@conn, :new) %></span>

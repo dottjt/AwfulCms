@@ -1,0 +1,119 @@
+@import "../global"; @import "../variables"; 
+
+@media screen and (min-width: 650px) {    
+    // .grid__container {
+    // }
+
+    // parent - grid__container 
+    .grid__inner {
+        position: relative!important;
+
+        height: 578px!important;
+
+        width: 205px!important; 
+        min-width: 205px!important;
+
+        .left-right-container {
+            height: 100%!important;
+            
+            flex-direction: column!important;
+        }
+    }
+
+    // parent - grid__inner
+    .grid__left {
+        height: 135px!important;
+
+        .image__container {
+            .image {
+                width: 100%!important;
+                border-right: 5px solid $grid-inner-border-right!important;
+            }
+        }
+
+        .price__container {
+            @include flex-center();
+            position: relative!important; 
+            top: 4.4rem!important;
+            min-height: 3.5rem!important;
+
+            // .price {
+            // }
+        }
+
+    }
+
+
+    // parent - grid__inner
+    // .grid__right {
+    // }
+
+
+    // parent - grid__right
+    .grid__top-right {
+        .title__container {
+            background: white!important;
+            padding-top: 0.5rem!important;
+            padding-bottom: 0.5rem!important;
+            
+            // .title {
+
+            // }
+        }
+
+        .cta__container {
+            position: absolute!important;
+            left: 4rem!important;
+            top: -7.5rem!important;
+
+            @include flex-center();
+            
+            .cta {
+                box-sizing: border-box!important;
+                bottom: 0!important;
+                left: 0!important;
+                padding: 1rem!important;
+            }
+        }     
+    }
+
+
+    // parent - grid__right
+    .grid__bottom-right {
+
+        .description__container {
+            .description {
+                min-height: 120px!important;
+
+                // reverse product_inner
+                top: -1.5rem!important;
+            }
+        }
+
+        .social_media_share {
+            bottom: 0.8rem!important;
+        }
+
+        .social__media {               
+            width: 11.5rem!important;  
+            
+            // reverse product_inner
+            bottom: -2rem!important;
+            
+            .social__item {
+                height: 35px!important;
+                width: 35px!important;    
+                
+                i {
+                    font-size: 1.4rem!important;
+                }
+            }
+        }
+
+        .likes {
+            position: relative!important;
+            bottom: 2.81rem!important;
+            right: 1rem!important;
+        }
+    }
+}

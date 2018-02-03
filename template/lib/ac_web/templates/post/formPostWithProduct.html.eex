@@ -1,0 +1,91 @@
+<%= form_for @changeset_post, @action, fn f -> %>
+  <%= if @changeset_post.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <table class="tag_table">
+    <thead>
+      <tr>
+        <th>Tag</th>          
+        <th>Products</th>
+        <th>Posts</th>
+      </tr>
+    </thead>
+
+    <tbody>            
+    <%= Enum.map(@tags, fn(tag) -> %>
+      <tr>   
+        <td align="middle"><%= tag.display_name %></td>
+        <td align="middle"><%= Enum.count(tag.products) %></td>
+        <td align="middle"><%= Enum.count(tag.posts) %></td>
+      </tr>
+    <% end) %>
+    </tbody>
+  </table>
+  
+
+  <div class="panel__product__container">
+    <div class="panel__product panel__product__left">
+
+      <div class="field">
+        <%= label f, :display_name, class: "label" %>
+        <%= text_input f, :display_name, class: "control" %>
+        <%= error_tag f, :display_name %>
+      </div>
+
+      <div class="field">
+        <%= label f, :author, class: "label" %>
+        <%= text_input f, :author, class: "control" %>
+        <%= error_tag f, :author %>
+      </div>
+  
+      <div class="field field-description">
+        <%= label f, :excerpt, class: "label" %>
+        <%= textarea f, :excerpt, class: "control" %>
+        <%= error_tag f, :excerpt %>
+      </div>
+            
+    </div>
+
+    <div class="panel__product panel__product__right">
+
+      <div class="field">
+        <%= label f, "generic or product_list", class: "label" %>
+        <%= text_input f, :post_type, class: "control" %>
+        <%= error_tag f, :post_type %>
+      </div>
+
+      <div class="field field-category">
+        <label class="label">Tag</label>          
+        <%= multiple_select(f, :product_tag_id, Enum.map(@tags, &{&1.name, &1.id})) %>
+      </div>
+  
+      <div class="field">
+        <%= label f, :product_limit, class: "label" %>
+        <%= number_input f, :product_limit, class: "control" %>
+        <%= error_tag f, :product_limit %>
+      </div>
+
+      <div class="field">
+        <%= label f, :product_offset, class: "label" %>
+        <%= number_input f, :product_offset, class: "control" %>
+        <%= error_tag f, :product_offset %>
+      </div>
+      
+      <div class="field">
+        <%= label f, :featured_image, class: "label" %>
+        <%= text_input f, :featured_image, class: "control" %>
+        <%= error_tag f, :featured_image %>
+      </div>
+    
+    </div>
+    
+  </div>
+
+
+  <div class="field">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

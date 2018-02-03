@@ -1,0 +1,43 @@
+@import "../global"; @import "../variables"; 
+
+.footer__container {        
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+    background: white;
+    border-top: 1px solid $border-grey;
+
+    // margin-top: 5rem;
+    height: 80px;
+    width: 100%;
+
+    .brand {
+        @include flex-center();
+        flex-direction: column;
+
+        .image {
+            height: 40px;
+        }
+    }
+
+    .link {
+        color: $primary-colour;
+    }
+
+    .attribute {
+        // for mobile
+        display: none;
+    }    
+}
+
+@media screen and (min-width: 460px) {
+    .footer__container {        
+        .attribute {
+            // reverse mobile
+            display: block;
+        }
+    }
+}
+
+

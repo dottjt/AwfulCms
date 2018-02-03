@@ -1,0 +1,148 @@
+<div class="panel__container">
+
+    <div class="links__container">
+        <a id="to_product" class="button">new product</a>
+        <a id="to_social" class="button">new social</a> 
+        <a id="to_update" class="button">new update</a>
+        <a id="to_post" class="button">new post</a>
+        <a id="to_pending" class="button">to pending</a>        
+    </div>
+    
+    <%= render_partial "admin_finder.html", assigns %>
+    
+    <div class="panel__products__container">
+        <h2 id="new_product">New Product</h2>
+        <a id="to_tag" class="button">new tag</a>        
+        <%= render AcWeb.ProductView, "formNew.html", Map.put(assigns, :action, product_path(@conn, :create)) %>
+    </div>
+    
+    <div class="panel__tag__container">
+        <h2 id="new_tag">New Tag</h2>
+
+        <%= render AcWeb.TagView, "form.html", Map.put(assigns, :action, tag_path(@conn, :create)) %>
+    </div>
+
+    <div class="panel__post__container">
+        <h2 id="new_post">New Post</h2>
+        
+        <%= render AcWeb.PostView, "formPostWithProduct.html", Map.put(assigns, :action, post_path(@conn, :createPostProductsList)) %>
+    </div>
+
+    <div class="panel__update__container">
+        <h2 id="new_update">New Update</h2>
+        
+        <%= render AcWeb.UpdateView, "form.html", Map.put(assigns, :action, update_path(@conn, :create)) %>
+    </div>
+    
+    <div class="panel__pending__container">
+        <h2 id="new_pending">Submitted/Draft Products</h2>
+        
+        <%= render AcWeb.ProductView, "formPending.html", assigns %>
+    </div>
+
+    <div class="panel__social__container">
+        <h2 id="new_social">New Social Post</h2>
+
+        <%= render AcWeb.SocialMediaView, "form.html", Map.put(assigns, :action, social_media_path(@conn, :create)) %>
+        
+    </div>
+    
+</div>
+
+<script>
+    let to_product = document.querySelector("#to_product");
+    let to_post = document.querySelector("#to_post");
+    let to_tag = document.querySelector("#to_tag");
+    let to_update = document.querySelector("#to_update");
+    let to_pending = document.querySelector("#to_pending");
+    let to_social = document.querySelector("#to_social");
+
+
+    let product__finder__container = document.querySelector(".product__finder__container");
+    let panel__products__container = document.querySelector(".panel__products__container");
+    let panel__tag__container = document.querySelector(".panel__tag__container");
+    let panel__post__container = document.querySelector(".panel__post__container");
+    let panel__update__container = document.querySelector(".panel__update__container");
+    let panel__pending__container = document.querySelector(".panel__pending__container");
+    let panel__social__container = document.querySelector(".panel__social__container");
+
+    
+    // default state.
+    product__finder__container.style.display = "block";
+    panel__products__container.style.display = "block";
+
+    panel__tag__container.style.display = "none";
+    panel__post__container.style.display = "none";
+    panel__update__container.style.display = "none";
+    panel__pending__container.style.display = "none";
+    panel__social__container.style.display = "none";
+
+    
+    to_product.addEventListener('click', function(event) {
+        product__finder__container.style.display = "block";
+        panel__products__container.style.display = "block";
+
+        panel__tag__container.style.display = "none";
+        panel__post__container.style.display = "none";
+        panel__update__container.style.display = "none";
+        panel__pending__container.style.display = "none";
+        panel__social__container.style.display = "none";
+    })
+
+    to_tag.addEventListener('click', function(event) {
+        product__finder__container.style.display = "none";
+        panel__products__container.style.display = "none";
+
+        panel__tag__container.style.display = "block";
+        panel__post__container.style.display = "none";
+        panel__update__container.style.display = "none";
+        panel__pending__container.style.display = "none";
+        panel__social__container.style.display = "none";
+    })
+
+    to_post.addEventListener('click', function(event) {
+        product__finder__container.style.display = "none";
+        panel__products__container.style.display = "none";
+
+        panel__tag__container.style.display = "none";
+        panel__post__container.style.display = "block";
+        panel__update__container.style.display = "none";
+        panel__pending__container.style.display = "none";
+        panel__social__container.style.display = "none";
+    })
+
+    to_update.addEventListener('click', function(event) {
+        product__finder__container.style.display = "none";
+        panel__products__container.style.display = "none";
+
+        panel__tag__container.style.display = "none";
+        panel__post__container.style.display = "none";
+        panel__update__container.style.display = "block";
+        panel__pending__container.style.display = "none";
+        panel__social__container.style.display = "none";
+    })
+
+    to_pending.addEventListener('click', function(event) {
+        product__finder__container.style.display = "none";
+        panel__products__container.style.display = "none";
+
+        panel__tag__container.style.display = "none";
+        panel__post__container.style.display = "none";
+        panel__update__container.style.display = "none";
+        panel__pending__container.style.display = "block";
+        panel__social__container.style.display = "none";
+    })
+
+    to_social.addEventListener('click', function(event) {
+        product__finder__container.style.display = "none";
+        panel__products__container.style.display = "none";
+
+        panel__tag__container.style.display = "none";
+        panel__post__container.style.display = "none";
+        panel__update__container.style.display = "none";
+        panel__pending__container.style.display = "none";
+        panel__social__container.style.display = "block";
+    })
+
+
+</script>

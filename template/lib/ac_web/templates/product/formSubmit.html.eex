@@ -1,0 +1,63 @@
+<%= form_for @changeset, @action, [multipart: :true, class: "general__form"], fn f -> %>
+
+    <%= if @changeset.action do %>
+      <div class="alert alert-danger">
+        <p>Oops, something went wrong! Please check the errors below.</p>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <label class="label" for="display_name">Product Name</label> <!-- <span>(35 character limit)</span> -->
+      <span class="displayNameCount"></span>            
+      <%= text_input f, :display_name, class: "control pDisplayName", required: "", maxlength: 35 %>
+      <%= error_tag f, :display_name %>
+    </div>
+
+    <div class="field">
+      <label class="label" for="price">Price <span>(i.e. 19.99)</span></label>          
+      <%= number_input f, :price, step: "any", class: "control pPrice", required: "" %>
+      <%= error_tag f, :price %>
+    </div>
+    
+    <div class="field">
+      <label class="label" for="featured_image">Product Image <span>(300w x 250h)</span></label>          
+      <%= file_input f, :featured_image, class: "pFeaturedImage", required: "", maxlength: 500 %>
+      <%= error_tag f, :featured_image %>
+    </div>
+
+    <div class="field">
+      <label class="label" for="url">Product URL</label>          
+      <%= text_input f, :url, class: "control pUrl", required: "", maxlength: 500 %>
+      <%= error_tag f, :url %>
+    </div>
+
+    <div class="field field-description">
+      <label class="label" for="description">Description</label> <!-- <span>(90 character limit)</span> -->        
+      <span class="descriptionCount"></span>                  
+      <%= textarea f, :description, class: "control pDescription", required: "", maxlength: 90 %>
+      <%= error_tag f, :description %>
+    </div>  
+
+    <div class="field field-category">
+      <label class="label" for="category_id">Category <span>(choose one)</span></label>          
+      <%= multiple_select(f, :category_id, Enum.map(@categories, &{&1.name, &1.id}), class: "pCategory", required: "") %>
+    </div>
+
+    <!-- <div class="field field-category">
+      <label class="label" for="sub_category_id">Sub Category <span>(choose one)</span></label>          
+      <%= multiple_select(f, :sub_category_id, Enum.map(@sub_categories, &{&1.name, &1.id}), class: "pSubCategory") %>
+    </div> -->
+    
+    <!-- 
+      <div class="field field-category">
+        <label class="label">Tag</label>          
+        <%= multiple_select(f, :product_tag_id, Enum.map(@tags, &{&1.name, &1.id}), class: "pProductTag") %>
+      </div> -->
+
+    <%= raw Recaptcha.Template.display %>
+    
+    <div class="field">
+      <%= submit "Submit", class: "submit" %>
+    </div>
+
+<% end %>

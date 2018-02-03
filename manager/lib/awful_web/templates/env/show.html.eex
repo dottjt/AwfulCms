@@ -1,0 +1,23 @@
+<h2>Show Env</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @env.name %>
+  </li>
+
+  <li>
+    <strong>Value:</strong>
+    <%= @env.value %>
+  </li>
+
+  <li>
+    <strong>Type:</strong>
+    <%= @env.type %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: env_path(@conn, :edit, @env) %></span>
+<span><%= link "Back", to: env_path(@conn, :index) %></span>

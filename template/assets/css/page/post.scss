@@ -1,0 +1,50 @@
+@import "../global"; @import "../variables"; 
+
+
+.post__container {
+
+    // .post__header__container {
+
+    // }
+
+    // .author__container {
+
+    // }
+
+    .excerpt__container {
+        margin-bottom: 1rem;
+    }
+        
+    .excerpt__container, .author__container {
+        @include flex-center();
+        .excerpt {
+            width: 90%;
+        }    
+
+        .author {
+            width: 90%;            
+        }
+        
+    }
+}
+
+
+
+
+@media screen and (min-width: 650px) {
+    .post__container {
+                
+        .excerpt__container, .author__container {
+
+            .excerpt {
+                width: 80%;            
+            }    
+        }
+
+        .author__container {
+            .author {
+                width: 90%;
+            }
+        }
+    }
+}

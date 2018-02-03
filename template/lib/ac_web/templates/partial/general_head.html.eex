@@ -1,0 +1,82 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- pinterest thing -->
+<meta name="p:domain_verify" content="04ab20b3e9da4afd992c3fbfa6cd698a"/>
+
+<%= if @conn.assigns["meta_title"] do %>
+    <title><%= @meta_title %> </title>
+    <meta property="og:title" content="<%= @meta_title %>">
+    <meta name="twitter:title" content="<%= @meta_title %>">    
+<% else %>
+    <title><%= Application.get_env(:ac, :website_title) %></title>
+<% end %>
+
+<%= if @conn.assigns["meta_description"] do %>
+    <meta name="description" content="<%= @meta_description %>">
+    <meta property="og:description" content="<%= @meta_description %>">   
+    <meta name="twitter:description" content="<%= @meta_description %>">    
+    <meta name="twitter:image:alt" content="<%= @meta_title %>">
+<% else %>
+    <meta name="description" content="<%= Application.get_env(:ac, :website_description) %>">
+    <meta property="og:description" content="<%= Application.get_env(:ac, :website_description) %>">    
+    <meta name="twitter:description" content="<%= Application.get_env(:ac, :website_description) %>">
+    <meta name="twitter:image:alt" content="<%= Application.get_env(:ac, :website_alt_image) %>">    
+<% end %>
+
+<%= if @conn.assigns["product"] do %>
+    <meta property="og:image" content="<%= @product.featured_image %>">
+    <meta name="twitter:image" content="<%= @product.featured_image %>">
+<% else %>
+    <!-- I need a better default images for this for this  -->
+    <meta property="og:image" content="<%= static_path(@conn, Application.get_env(:ac, :website_logo_png)) %>">
+    <meta name="twitter:image" content="<%= static_path(@conn, Application.get_env(:ac, :website_logo_png)) %>">
+<% end %>
+
+<meta name="author" content="<%= Application.get_env(:ac, :website_name) %>">
+<meta name="keywords" content="<%= Application.get_env(:ac, :website_keywords) %>">
+
+<!-- facebook things -->
+<meta property="og:url" content="<%= url(@conn) <> @conn.request_path %>">
+<meta property="og:site_name" content="<%= Application.get_env(:ac, :website_description) %>">
+
+<meta name="twitter:site" content="<%= Application.get_env(:ac, :website_twitter) %>">
+<meta name="twitter:creator" content="<%= Application.get_env(:ac, :website_twitter) %>">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="<%= Application.get_env(:ac, :website_domain) %>">
+<link rel="preconnect" href="<%= Application.get_env(:ac, :website_domain) %>about">
+<link rel="preconnect" href="<%= Application.get_env(:ac, :website_domain) %>gifts">
+
+<link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">    
+
+<meta name="msapplication-config" content="/images/<%= Application.get_env(:ac, :website_acronym)%>/favicon/browserconfig.xml">
+<link rel="shortcut icon" href="/images/<%= Application.get_env(:ac, :website_acronym)%>/favicon/favicon.ico">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/images/<%= Application.get_env(:ac, :website_acronym)%>/favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/<%= Application.get_env(:ac, :website_acronym)%>/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/<%= Application.get_env(:ac, :website_acronym)%>/favicon/favicon-16x16.png">
+<link rel="manifest" href="/images/<%= Application.get_env(:ac, :website_acronym)%>/favicon/manifest.json">
+<link rel="mask-icon" href="/images/<%= Application.get_env(:ac, :website_acronym)%>/favicon/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="apple-mobile-web-app-title" content="<%= Application.get_env(:ac, :website_name)%>">
+<meta name="application-name" content="<%= Application.get_env(:ac, :website_name)%>">
+<meta name="theme-color" content="#ffffff">
+
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Slabo+13px" rel="stylesheet">
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+
+<meta name="google-site-verification" content="<%= Application.get_env(:ac, :google_site_verification) %>" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=<%= Application.get_env(:ac, :google_analytics_tracking_id) %>"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '<%= Application.get_env(:ac, :google_analytics_tracking_id) %>');
+</script>
+
+

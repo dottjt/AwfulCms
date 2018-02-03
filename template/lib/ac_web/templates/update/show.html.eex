@@ -1,0 +1,43 @@
+<h2>Show Update</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @update.name %>
+  </li>
+
+  <li>
+    <strong>Author:</strong>
+    <%= @update.author %>
+  </li>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @update.title %>
+  </li>
+  
+  <li>
+    <strong>Display name:</strong>
+    <%= @update.display_name %>
+  </li>
+
+  <li>
+    <strong>Excerpt:</strong>
+    <%= @update.excerpt %>
+  </li>
+
+  <li>
+    <strong>Excerpt:</strong>
+    <%= @update.draft %>
+  </li>
+  
+  <li>
+    <strong>Excerpt:</strong>
+    <%= @update.schedule_date %>
+  </li>
+  
+</ul>
+
+<span><%= link "Edit", to: update_path(@conn, :edit, @update) %></span>
+<span><%= link "Back", to: update_path(@conn, :index) %></span>

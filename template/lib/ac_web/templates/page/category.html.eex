@@ -1,0 +1,36 @@
+<div class="category__container sidebar_left__container">
+    <div class="introduction__container">
+        <div class="title__container">
+            <h2 class="title">
+                <%= @category.display_name %>
+            </h2>
+        </div>
+        <div class="description__container">
+            <h4 class="description">
+                <%= @category.description %> 
+            </h4>
+        </div>
+
+        <div class="back__container">
+            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+            <a class="back" href="<%= page_path @conn, :categories %>">view all categories.</a>
+        </div>
+    </div>
+
+    <div class="header__container">
+        <div class="header">
+            <div class="icon__container">
+                <i class="fa <%= @category.icon %>" aria-hidden="true" style="color: white"></i>                                   
+            </div>
+        
+            <div class="header__title__container">
+                <h4 class="header__title"> <%= @category.display_name %> products.</h4> 
+            </div>
+        </div>
+    </div>
+    
+    <%= render_partial "product_enum.html", %{blog_description: false, products: @category_products, conn: @conn} %>        
+    
+    <%= render_partial "category_pagination.html", assigns %>        
+    
+</div>

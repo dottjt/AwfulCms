@@ -1,0 +1,26 @@
+<div class="categories__container sidebar_left__container">
+    <div class="introduction__container">
+        <div class="title__container">
+            <h2 class="title">
+                categories awful.
+            </h2>
+        </div>
+        <div class="description__container">
+            <h3 class="description">
+                a list of all the awful categories that govern this site. 
+            </h3>
+        </div>
+        <div class="back__container">
+            <i class="fa fa-chevron-left" aria-hidden="true"></i>    
+            <a class="back" href="<%= page_path(@conn, :homepage)%>">
+                to homepage.
+            </a>
+        </div>
+    </div>
+
+    <div class="enum__outer">
+        <%= Enum.map(@categories, fn(category) -> %>
+            <%= render_partial "categories_enum.html", %{conn: @conn, category: category} %>                                    
+        <% end) %>
+    </div>
+</div>

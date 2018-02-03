@@ -1,0 +1,25 @@
+<div class="admin_flex_column_container">    
+  <h2>Show Category</h2>
+
+  <ul>
+
+    <li>
+      <strong>Name:</strong>
+      <%= @category.name %>
+    </li>
+
+    <li>
+      <strong>Display name:</strong>
+      <%= @category.display_name %>
+    </li>
+
+    <li>
+      <strong>Description:</strong>
+      <%= @category.description %>
+    </li>
+
+  </ul>
+
+  <span><%= link "Edit", to: category_path(@conn, :edit, @category) %></span>
+  <span><%= link "Back", to: category_path(@conn, :index) %></span>
+</div>

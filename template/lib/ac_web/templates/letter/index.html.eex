@@ -1,0 +1,30 @@
+<h2>Listing Letters</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Recipient</th>
+      <th>Subject</th>
+      <th>Message</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for letter <- @letters do %>
+    <tr>
+      <td><%= letter.recipient %></td>
+      <td><%= letter.subject %></td>
+      <td><%= letter.message %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: letter_path(@conn, :show, letter), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: letter_path(@conn, :edit, letter), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: letter_path(@conn, :delete, letter), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Letter", to: letter_path(@conn, :new) %></span>

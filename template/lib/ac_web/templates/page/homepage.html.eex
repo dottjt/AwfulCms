@@ -1,0 +1,26 @@
+<main class="homepage__container sidebar_left__container">
+    <div class="header__container">
+        <div class="header">
+            <div class="icon__title__outer">
+                <div class="icon__container">
+                    <i class="fa fa-calendar-o" aria-hidden="true" style="color:white"></i>                                    
+                </div>
+                
+                <div class="header__title__container">
+                    <h4 class="header__title">latest awful.</h4>
+                </div>
+            </div>
+
+            <div class="header__date__container">
+                <h4 class="header__date">
+                    <%= Date.utc_today %>
+                </h4>
+            </div>
+        </div>
+    </div>
+    
+    <%= render_partial "product_enum.html", %{blog_description: false, products: @products, conn: @conn} %>        
+
+    <%= render_partial "homepage_pagination.html", assigns %>                    
+    
+</main>

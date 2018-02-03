@@ -1,0 +1,77 @@
+<div class="admin_flex_column_container">    
+  <h2>Show Product</h2>
+
+  <ul>
+
+    <li>
+      <strong>Name:</strong>
+      <%= @product.name %>
+    </li>
+
+    <li>
+      <strong>Display name:</strong>
+      <%= @product.display_name %>
+    </li>
+
+    <li>
+      <strong>Price:</strong>
+      <%= @product.price %>
+    </li>
+
+    <li>
+      <strong>Cta:</strong>
+      <%= @product.cta %>
+    </li>
+
+    <li>
+      <strong>Featured image:</strong>
+      <img src="<%= @product.featured_image %>" />
+      <%= @product.featured_image %>
+    </li>
+
+    <li>
+      <strong>Product Type:</strong>
+      <%= @product.product_type %>
+    </li>
+
+    <li>
+      <strong>Url:</strong>
+      <%= @product.url %>
+    </li>
+
+    <li>
+      <strong>Url Text:</strong>
+      <%= @product.url_text %>
+    </li>
+  
+    <li>
+      <strong>Description:</strong>
+      <%= @product.description %>
+    </li>
+
+    <li>
+      <strong>Blog Description:</strong>
+      <%= @product.blog_description %>
+    </li>
+  
+    <li>
+      <strong>Category:</strong>
+      <%= @product.category.display_name %>
+    </li>
+      
+    <!-- <li>
+      <strong>Sub Category:</strong>
+      <%#= @product.sub_category.display_name %>
+    </li> -->
+
+    <li>
+      <strong>Tag:</strong>
+      <%#= @product.tag.display_name %>
+    </li>
+  
+
+  </ul>
+
+  <span><%= link "Edit", to: product_path(@conn, :edit, @product) %></span>
+  <span><%= link "Back", to: product_path(@conn, :index) %></span>
+</div>

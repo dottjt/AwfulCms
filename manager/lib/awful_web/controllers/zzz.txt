@@ -1,0 +1,323 @@
+  def update_production_secret(conn, _params) do
+    result = Porcelain.shell(System.get_env("AWFUL_SCRIPT_DIR") <> "/" <> "update_production_secret.sh")
+    
+    render conn, "message.json", response: result.out
+  end
+
+  def build_production_single(conn, _params) do
+    result = Porcelain.shell(System.get_env("AWFUL_SCRIPT_DIR") <> "/" <> "build_production_single.sh")
+    
+    render conn, "message.json", response: result.out
+  end
+
+  def build_production_all(conn, _params) do
+    result = Porcelain.shell(System.get_env("AWFUL_SCRIPT_DIR") <> "/" <> "build_production_all.sh")
+    
+    render conn, "message.json", response: result.out
+  end
+
+
+        Porcelain.shell("linode domain record-create -l " <> url <> " -t " <> type <> " -n " <> name <> " -R " <> value <> " -p " <> port <>  " -L " <> protocol <>  " -W " <> weight <> " -P " <> priority <> " --json")
+        Porcelain.shell("linode domain record-create -l " <> url <> " -t " <> type <> " -n " <> name <> " -R " <> value <> " -P " <> priority <> " --json")
+        Porcelain.shell("linode domain record-create -l " <> url <> " -t " <> type <> " -n " <> name <> " -R " <> value <> " --json")
+        Porcelain.shell("linode domain record-delete -l " <> url <> " -t " <> type <> " -m " <> match <> " --json")
+        Porcelain.shell("linode domain -a create -l " <> url <> " -e " <> email )
+
+
+#!/bin/bash
+
+declare -a arr=("ac" "af" "ap" "ach" "ahp" "apo" "a9" "aw")
+
+# rm -rf websites
+
+for i in "${arr[@]}"
+do
+   
+    cd $AWFUL_DIR/websites/"$i"/ 
+    echo $PWD
+
+    echo "new directory"
+    yes | mix edeliver build release production --verbose
+    echo "build release complete"
+    mix edeliver deploy release to production
+    echo "deploy release complete"
+    mix edeliver start production
+    echo "start production complete"
+
+done
+
+
+
+
+#!/bin/bash
+
+cd $AWFUL_DIR/websites/"$1"/ 
+
+echo "new directory"
+mix edeliver build release production --verbose
+echo "build release complete"
+mix edeliver deploy release to production
+echo "deploy release complete"
+mix edeliver start production
+echo "start production complete"
+
+
+#!/bin/bash
+# try on template_symbolic
+
+# example 
+# sh link.sh ac
+
+#   
+declare -a arr=("ac" "af" "ap" "ach" "ahp" "apo" "a9" "aw")
+
+for i in "${arr[@]}"
+do
+	cd $AWFUL_DIR/websites/"$i"/
+
+	mix ecto.reset
+
+done
+
+
+
+# change version number in mix file 
+cd $AWFUL_DIR/template 
+sed -i '' -e "s/version: \"$1\"/version: \"$2\"/" mix.exs
+
+
+
+import axios from 'axios';
+
+// master elements
+let dur_all = document.querySelectorAll(".dur_all");
+let durc_all = document.querySelectorAll(".durc_all");
+
+// staging elements
+let build_staging_single = document.querySelectorAll(".build_staging_single");
+let delete_staging_all = document.querySelectorAll(".delete_staging_all");
+let update_staging_all = document.querySelectorAll(".update_staging_all");
+let update_staging_repo_all = document.querySelectorAll(".update_staging_repo_all");
+let compile_staging_all = document.querySelectorAll(".compile_staging_all");
+
+// production elements
+let build_production_single = document.querySelectorAll(".build_production_single");
+let build_production_all = document.querySelectorAll(".build_production_all");
+
+let update_production_secret = document.querySelectorAll(".update_production_secret");
+let update_production_all = document.querySelectorAll(".update_production_all");
+
+// command prompt
+let admin = document.querySelector(".admin__container");
+let main__panel = document.querySelector(".main__panel__container");
+let build = document.querySelector(".build__container");
+let indicator = document.querySelector(".indicator__container");
+
+let command__output__text = document.querySelectorAll(".command__output__text");
+
+console.log(build)
+
+var counter = 1;
+
+// access API
+function execute_command(element, script_name, silent, name) {
+    if (element) {
+        admin.style.border = "10px solid orange";
+
+        command__output__text[0].insertAdjacentHTML('afterbegin', '<p class="command__output__text orange">' + new Date().toLocaleTimeString() + " " + counter.toString() + " Currently processing: " + name + "..." + '</div>');
+        counter++;    
+
+        axios.get("/api/" + script_name)
+            .then(function (data) {
+                for(let i=0;i<command__output__text.length;i++){
+                    if(silent) {
+                        command__output__text[0].insertAdjacentHTML('afterbegin', '<p class="command__output__text green">' + new Date().toLocaleTimeString() + " " + counter.toString() + " " + name + " done" + '</div>');
+                        admin.style.border = "10px solid green";
+                        counter++;
+                    } else {           
+                        command__output__text[0].insertAdjacentHTML('afterbegin', '<p class="command__output__text green">' + new Date().toLocaleTimeString() + " " + counter.toString() + " " + data.data.response + '</div>');
+                        admin.style.border = "10px solid green";
+                        counter++;
+                    }
+                }
+            }).catch(function (error) {
+                console.log(error);
+            });
+    }
+}
+
+
+window.addEventListener("keydown", (event) =>{
+    const keyCode = event.keyCode;
+
+    if (keyCode === 27) {
+        indicator.style.background = "red";
+        admin.style.border = "10px solid red";
+    }
+
+    if (keyCode === 73) {
+        if(indicator.style.background === "green") {
+            indicator.style.background = "none";   
+            admin.style.border = "10px solid red";     
+        } else {
+            indicator.style.background = "green";    
+            admin.style.border = "10px solid green";    
+        }
+    }
+
+});
+
+window.addEventListener("keypress", (event) =>{
+    const keyName = event.key;
+
+    // local 
+    if (keyName === "m" && indicator.style.background === "green" && !(admin.style.border === "10px solid orange")) {
+        execute_command(dur_all, "dur_all", true, "Master - DUR");
+    }
+
+    if (keyName === "," && indicator.style.background === "green" && !(admin.style.border === "10px solid orange")) {
+        execute_command(durc_all, "durc_all", true, "Master - DURC");
+    }
+
+    if (keyName === "u" && indicator.style.background === "green" && !(admin.style.border === "10px solid orange")) {
+        execute_command(update_staging_all, "update_staging_all", true, "Staging - Update All");
+    }
+
+    if (keyName === "r" && indicator.style.background === "green" && !(admin.style.border === "10px solid orange")) {
+        execute_command(update_staging_repo_all, "update_staging_repo_all", true, "Staging - Update Repo");
+    }
+    
+    if (keyName === "d" && indicator.style.background === "green" && !(admin.style.border === "10px solid orange")) {
+        execute_command(delete_staging_all, "delete_staging_all", true, "Staging - Delete All");
+    }
+
+    if (keyName === "c" && indicator.style.background === "green" && !(admin.style.border === "10px solid orange")) {
+        execute_command(compile_staging_all, "compile_staging_all", true, "Staging - Compile All");
+    }
+
+    if (keyName === "p" && indicator.style.background === "green" && !(admin.style.border === "10px solid orange")) {
+        execute_command(update_production_all, "update_production_all", true, "Production - Update All");
+    }
+
+    if (keyName === "s" && indicator.style.background === "green" && !(admin.style.border === "10px solid orange")) {
+        execute_command(update_production_secret, "update_production_secret", true, "Production - Update Secret");
+    }
+
+
+    // build main__panel
+    if (keyName === "b") {
+        let display = (window.getComputedStyle ? getComputedStyle(build, null) : build.currentStyle).display;
+        
+        if (display == 'none') { 
+            build.style.display = 'block';
+        } else {
+            build.style.display = 'none';
+        }
+    }
+
+});
+
+delete_staging_all[i].addEventListener('click', function(event) {
+    if(indicator.style.background === "green") {
+        execute_command(delete_staging_all, "delete_staging_all", true);
+        delete_staging_all[i].style.border = "2px solid blue";
+    }
+});
+
+
+
+
+// // staging button functions
+// if(delete_staging_all) {  
+//     for(let i=0;i<delete_staging_all.length;i++){
+//       delete_staging_all[i].addEventListener('click', function(event) {
+//         if(indicator.style.background === "green") {
+//             execute_command(delete_staging_all, "delete_staging_all", true);
+//             delete_staging_all[i].style.border = "2px solid blue";
+//         }
+//       });
+//     }
+// }
+
+// if(build_staging_single) {  
+//     for(let i=0;i<build_staging_single.length;i++){
+//       build_staging_single[i].addEventListener('click', function(event) {
+//         if(indicator.style.background === "green") {
+//             execute_command(build_staging_single, "build_staging_single", true);
+//             delete_staging_all[i].style.border = "2px solid blue";
+//         }
+//       });
+//     }
+// }
+
+// if(update_staging_all) {  
+//     for(let i=0;i<update_staging_all.length;i++){
+//       update_staging_all[i].addEventListener('click', function(event) {
+//         if(indicator.style.background === "green") {
+//             execute_command(update_staging_all, "update_staging_all", false);
+//             delete_staging_all[i].style.border = "2px solid blue";
+//         }
+//       });
+//     }
+// }
+
+// if(update_staging_repo_all) {  
+//     for(let i=0;i<update_staging_repo_all.length;i++){
+//       update_staging_repo_all[i].addEventListener('click', function(event) {
+//         if(indicator.style.background === "green") {
+//             execute_command(update_staging_repo_all, "update_staging_repo_all", false);
+//             delete_staging_all[i].style.border = "2px solid blue";
+//         }
+//       });
+//     }
+// }
+
+
+// // production button functions
+// if(update_production_secret) {  
+//     for(let i=0;i<update_production_secret.length;i++){
+//       update_production_secret[i].addEventListener('click', function(event) {
+//         if(indicator.style.background === "green") {
+//             execute_command(update_production_secret, "update_production_secret", true);
+//             delete_staging_all[i].style.border = "2px solid blue";
+//         }
+//       });
+//     }
+// }
+
+// if(build_production_single) {  
+//     for(let i=0;i<build_production_single.length;i++){
+//       build_production_single[i].addEventListener('click', function(event) {
+//         if(indicator.style.background === "green") {
+//             execute_command(build_production_single, "build_production_single", true);
+//             delete_staging_all[i].style.border = "2px solid blue";
+//         }
+//       });
+//     }
+// }
+
+// // if(build_production_all) {  
+// //     for(let i=0;i<build_production_all.length;i++){
+// //       build_production_all[i].addEventListener('click', function(event) {
+// //         if(indicator.style.background === "green") {
+// //             execute_command(build_production_all, "build_production_all", true);
+// //             delete_staging_all[i].style.border = "2px solid blue";
+// //         }
+// //       });
+// //     }
+// // }
+
+// if(update_production_all) {  
+//     for(let i=0;i<update_production_all.length;i++){
+//       update_production_all[i].addEventListener('click', function(event) {
+//         if(indicator.style.background === "green") {
+//             execute_command(update_production_all, "update_production_all", true);
+//             delete_staging_all[i].style.border = "2px solid blue";
+//         }
+//       });
+//     }
+// }
+
+
+
+

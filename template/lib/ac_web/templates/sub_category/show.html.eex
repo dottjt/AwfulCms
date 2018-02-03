@@ -1,0 +1,25 @@
+<div class="admin_flex_column_container">    
+  <h2>Show Sub category</h2>
+
+  <ul>
+
+    <li>
+      <strong>Name:</strong>
+      <%= @sub_category.name %>
+    </li>
+
+    <li>
+      <strong>Display name:</strong>
+      <%= @sub_category.display_name %>
+    </li>
+
+    <li>
+      <strong>Description:</strong>
+      <%= @sub_category.description %>
+    </li>
+
+  </ul>
+
+  <span><%= link "Edit", to: sub_category_path(@conn, :edit, @sub_category) %></span>
+  <span><%= link "Back", to: sub_category_path(@conn, :index) %></span>
+</div>

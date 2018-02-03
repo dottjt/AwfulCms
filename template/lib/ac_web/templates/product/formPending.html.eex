@@ -1,0 +1,19 @@
+<table class="tag_table">
+    <thead>
+        <tr>
+        <th>Product</th>
+        <th>Schedule Date</th>
+        <th>Edit</th>
+        </tr>
+    </thead>
+
+    <tbody>            
+    <%= Enum.map(@products_pending, fn(product) -> %>
+        <tr>
+            <td align="middle"><%= product.name %></td>
+            <td align="middle"><%= product.schedule_date %></td>            
+            <td align="middle"><span><%= link "Edit", to: product_path(@conn, :edit, product.name), class: "" %></span></td>
+        </tr>
+    <% end) %>
+    </tbody>
+</table>

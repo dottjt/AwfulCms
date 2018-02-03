@@ -1,0 +1,34 @@
+<div class="admin_menu__container">
+    <a href="<%= page_path(@conn, :admin)%>">
+        <img class="logo__image" src="<%= static_path(@conn, Application.get_env(:ac, :website_logo_svg))%>" alt="<%= Application.get_env(:ac, :website_name)%> Logo">                
+    </a>
+    <div class="menubar__container">
+        <div class="item">
+            <a href="<%= product_path(@conn, :index)%>">Products</a>
+        </div>
+        <div class="item">
+            <a href="<%= category_path(@conn, :index)%>">Categories</a>
+        </div>
+        <div class="item">
+            <a href="<%= sub_category_path(@conn, :index)%>">Sub Categories</a>
+        </div>
+        <div class="item">
+            <a href="<%= tag_path(@conn, :index)%>">Tags</a>
+        </div>
+        <div class="item">
+            <a href="<%= social_media_path(@conn, :index)%>">Social Media</a>
+        </div>
+        <div class="item">
+            <a href="<%= post_path(@conn, :index)%>">Posts</a>
+        </div>
+        <div class="item">
+            <a href="<%= update_path(@conn, :index)%>">Updates</a>
+        </div>
+        <div class="item">
+            <a href="<%= user_path(@conn, :index)%>">Users</a>
+        </div>
+        <div class="item">
+            <a href="<%= email_path(@conn, :index)%>">Emails</a>
+        </div>
+    </div>
+</div>

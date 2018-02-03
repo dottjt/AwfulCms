@@ -1,0 +1,47 @@
+<div class="enum__outer">
+    <%= Enum.map(@updates, fn(update) -> %>
+        <div class="news__inner">
+            <div class="news__left">
+                <div class="icon__container">
+                    <i class="fa fa-user" aria-hidden="true"></i>                                    
+                </div>
+
+                <div class="author__container">
+                    <h5>
+                        <%= update.author %>                            
+                    </h5>
+                </div>
+
+                <div class="date__container">
+                    <h5>
+                        <%= Timex.format!(Timex.to_datetime(update.inserted_at), "{D}-{M}-{YYYY}") %>                                                            
+                    </h5>
+                </div>
+            </div>
+            <div class="news__right">
+                <div class="text__container">
+                    <h5>
+                        <%= update.display_name %>                            
+                    </h5>
+                </div>
+                
+                <!-- content container -->
+                <div class="news__content__container">
+                    <h4 class="title"> 
+                        <%= update.title %>
+                    </h4>
+        
+                    <h5 class="text">
+                        <%= update.excerpt %>                        
+                    </h5>
+                    <div class="read__more__container">
+                        <a class="read__more" href="<%= page_path @conn, :update, update.name %>">read more.</a>                            
+                    </div>
+                </div>     
+                <div class="dropdown__button">
+                    <i class="fa fa-plus" aria-hidden="true"></i>                                     
+                </div>
+            </div>      
+        </div>
+    <% end) %>
+</div>

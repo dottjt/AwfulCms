@@ -1,0 +1,17 @@
+<div class="social__media">
+    <a class="social__item" href="https://www.facebook.com/sharer/sharer.php?u=<%= Application.get_env(:ac, :website_domain) %><%= page_path @conn, :individual, @product.name %>">
+        <i class="fa fa-facebook-square" aria-hidden="true" style="color:#3b5998"></i>    
+    </a>
+    <a class="social__item" href="https://twitter.com/home?status=<%= Application.get_env(:ac, :website_domain) %><%= page_path @conn, :individual, @product.name %>">
+        <i class="fa fa-twitter-square" aria-hidden="true" style="color:#1dcaff"></i>    
+    </a>
+    <a class="social__item" href="https://instagram.com/awfulchristmas">
+        <i class="fa fa-instagram" aria-hidden="true" style="color:#8a3ab9"></i>    
+    </a>
+    <a class="social__item" href="https://pinterest.com/pin/create/button/?url=<%= Application.get_env(:ac, :website_domain) %><%= page_path @conn, :individual, @product.name %>&media=<%= @product.url %>&description=<%= @product.description %>">
+        <i class="fa fa-pinterest-square" aria-hidden="true" style="color:#cb2027"></i>    
+    </a>
+    <a class="social__item" href="https://reddit.com/submit?url=<%= Application.get_env(:ac, :website_domain) %><%= page_path @conn, :individual, @product.name %>&title=<%= @product.display_name %>">
+        <i class="fa fa-reddit-square" aria-hidden="true" style="color:#000000"></i>    
+    </a>
+</div>

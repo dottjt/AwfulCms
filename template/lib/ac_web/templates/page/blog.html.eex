@@ -1,0 +1,41 @@
+<div class="blog__container sidebar_left__container">
+
+    <div class="introduction__container">
+        <div class="title__container">
+            <h2 class="title">
+                awful blog.
+            </h2>
+        </div>
+        <div class="description__container">
+            <h3 class="description">
+                <%= Application.get_env(:ac, :blog_description) %>
+            </h3>
+        </div>
+    
+        <div class="back__container">
+            <i class="fa fa-chevron-left" aria-hidden="true"></i>    
+            <a class="back" href="<%= page_path(@conn, :homepage)%>">
+                to homepage.
+            </a>
+        </div>
+    </div>
+    
+    <div class="header__container">
+        <div class="header">
+            <div class="icon__container">
+                <i class="fa fa-rss" aria-hidden="true" style="color: white"></i>                                    
+            </div>
+        
+            <div class="header__title__container">
+                <h4 class="header__title">blogs awful.</h4> 
+            </div>
+        </div>
+    </div>
+            
+    <%= render_partial "blog_enum.html", assigns %>  
+
+    <%= render_partial "blog_pagination.html", assigns %>                    
+    
+</div>
+
+

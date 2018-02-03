@@ -1,0 +1,7 @@
+<div class="contact__container">
+    <h2>Message <%= Application.get_env(:ac, :website_name) %></h2>   
+                
+    <%= render AcWeb.EmailView, "form.html", Map.put(assigns, :action, email_path(@conn, :create)) %>
+
+</div>
+

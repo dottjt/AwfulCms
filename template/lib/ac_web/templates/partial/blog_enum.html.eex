@@ -1,0 +1,41 @@
+<div class="enum__outer">
+    <%= Enum.map(@posts, fn(post) -> %>
+        <div class="blog__inner">  
+
+            <div class="title__image__container">
+                <a class="title__container" href="<%= page_path(@conn, :post, post.name)%>">
+                    <h2 class="title">
+                        <%= post.display_name %>
+                    </h2>
+                </a>
+                <div class="image__container">
+                    <%= img_tag(post.featured_image, class: "image")  %>                                                     
+                </div>  
+            </div>                                               
+    
+            <div class="date__container">
+                <h4 class="date">
+                    <%= Timex.format!(Timex.to_datetime(post.inserted_at), "{D}-{M}-{YYYY}") %>                        
+                </h4>
+            </div>
+
+            <div class="author__container">
+                <h3 class="author">
+                    <%= post.author %>
+                </h3>
+            </div>
+        
+            <div class="excerpt__container">
+                <p class="excerpt">
+                    <%= post.excerpt %>
+                </p>
+            </div>
+
+            <a class="read_more__container" href="<%= page_path(@conn, :post, post.name)%>">
+                <h3 class="read_more">
+                    read more.
+                </h3>
+            </a>    
+        </div>
+    <% end) %>
+</div>

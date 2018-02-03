@@ -1,0 +1,5 @@
+<h2>Edit Letter</h2>
+
+<%= render "form.html", Map.put(assigns, :action, letter_path(@conn, :update, @letter)) %>
+
+<span><%= link "Back", to: letter_path(@conn, :index) %></span>

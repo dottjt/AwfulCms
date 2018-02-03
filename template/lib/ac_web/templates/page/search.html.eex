@@ -1,0 +1,11 @@
+<div class="search__container sidebar_left__container">
+    <div class="introduction__container">
+        <div class="title__container">
+            <h2 class="title">
+                search awful.
+            </h2>
+        </div>
+    </div>
+        
+    <%= render_partial "product_enum.html", assigns %>                    
+</div>

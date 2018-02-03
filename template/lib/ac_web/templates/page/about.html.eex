@@ -1,0 +1,16 @@
+<div class="about__container full_width__container">
+    <div class="title__container">
+        <img class="image" src="<%= static_path(@conn, Application.get_env(:ac, :website_logo_svg))%>" alt="<%= Application.get_env(:ac, :website_name)%> Logo">
+        <h2 class="title">Welcome to the land of <%= Application.get_env(:ac, :website_name_lower) %>.</h2>
+    </div>
+
+    <div class="text__container">        
+        <%= raw Application.get_env(:ac, :about_copy) %>
+
+        <div class="options">
+            <a href="<%= page_path(@conn, :contact)%>">message me.</a>
+            <span>|</span>
+            <a href="<%= page_path(@conn, :submit)%>">submit a product.</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= render_partial "plain_head.html", assigns %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.0/css/bulma.min.css">    
+  </head>
+
+  <body>
+    <div class="uttermost__container admin__uttermost__container">
+      <section class="admin_layer_one">
+        <%= render_partial "admin_menu.html", assigns %>        
+      </section>
+      
+      <section class="admin_layer_four">
+        <%= render @view_module, @view_template, assigns %>
+      </section>
+
+      <section class="layer_five">
+        <%= render_partial "general_footer.html", assigns %>        
+      </section>
+
+    </div>    
+    <script src="<%= static_path(@conn, "/js/vendor.js")%>"></script>        
+    <script src="<%= static_path(@conn, "/js/app.js")%>"></script>    
+  </body>
+</html>
+
+
+

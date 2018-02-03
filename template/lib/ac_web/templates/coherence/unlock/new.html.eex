@@ -1,0 +1,22 @@
+<br \>
+
+<%= form_for @conn, unlock_path(@conn, :create), [as: :unlock], fn f  -> %>
+
+  <div class="field">
+    <%= required_label f, dgettext("coherence", "Email"), class: "label" %>
+    <%= text_input f, :email, class: "control", required: "" %>
+    <%= error_tag f, :email %>
+  </div>
+
+  <div class="field">
+    <%= required_label f, dgettext("coherence", "Password"), class: "label" %>
+    <%= password_input f, :password, class: "control", required: "" %>
+    <%= error_tag f, :password %>
+  </div>
+
+  <div class="field">
+    <%= submit dgettext("coherence", "Send Instructions"), class: "btn btn-primary" %>
+    <%= link dgettext("coherence", "Cancel"), to: Coherence.Config.logged_out_url("/"), class: "btn" %>
+  </div>
+
+<% end %>

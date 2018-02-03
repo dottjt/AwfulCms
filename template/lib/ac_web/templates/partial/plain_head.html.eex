@@ -1,0 +1,28 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="author" content="<%= Application.get_env(:ac, :website_name) %>">
+<meta name="description" content="<%= Application.get_env(:ac, :website_description) %>">
+
+<title><%= Application.get_env(:ac, :website_title) %></title>
+<meta name="description" content="<%= Application.get_env(:ac, :website_description) %>" />
+
+<link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">    
+<link rel="shortcut icon" href="<%= static_path(@conn, Application.get_env(:ac, :website_favicon)) %>" type="image/x-icon">
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans|Slabo+13px" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<meta name="google-site-verification" content="<%= Application.get_env(:ac, :google_site_verification) %>" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=<%= Application.get_env(:ac, :google_analytics_tracking_id) %>"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '<%= Application.get_env(:ac, :google_analytics_tracking_id) %>');
+</script>
+

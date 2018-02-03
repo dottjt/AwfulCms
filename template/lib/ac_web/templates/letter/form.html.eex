@@ -1,0 +1,38 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <h3>Dear Santa,</h3>
+
+  <div class="field field-description">
+    <%= textarea f, :message, class: "control" %>
+    <%= error_tag f, :message %>
+  </div>
+
+
+  <div class="field">
+    <h4>Regards,</h4>
+    <%= text_input f, :recipient, class: "control" %>
+    <%= error_tag f, :recipient %>
+  </div>
+
+  <div class="field">
+    <h4>Your Email,</h4>
+    <%= text_input f, :recipient, class: "control" %>
+    <%= error_tag f, :recipient %>
+  </div>
+  
+
+  <!-- <div class="field">
+    <%= label f, :subject, class: "label" %>
+    <%= text_input f, :subject, class: "control" %>
+    <%= error_tag f, :subject %>
+  </div> -->
+
+  <div class="field">
+    <button class="submit" type="submit">send to santa.</button>
+  </div>
+<% end %>

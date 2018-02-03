@@ -1,0 +1,22 @@
+<div class="social__container">
+    <a class="social__item" href="https://facebook.com/awfulchristmas">
+        <i class="fa fa-facebook" aria-hidden="true" style="color:#3b5998"></i>    
+        <h6 class="text">Facebook</h6>
+    </a>
+    <a class="social__item" href="https://twitter.com/awfulchristmas">
+        <i class="fa fa-twitter" aria-hidden="true" style="color:#1dcaff"></i>    
+        <h6 class="text">Twitter</h6>                        
+    </a>
+    <a class="social__item" href="https://instagram.com/awfulchristmas">
+        <i class="fa fa-instagram" aria-hidden="true" style="color:#8a3ab9"></i>    
+        <h6 class="text">Instagram</h6>                        
+    </a>
+    <a class="social__item" href="https://pintrest.com/awfulchristmas">
+        <i class="fa fa-pinterest" aria-hidden="true" style="color:#cb2027"></i>    
+        <h6 class="text">Pinterest</h6>                                                
+    </a>
+    <a class="social__item" href="">
+        <i class="fa fa-reddit" aria-hidden="true" style="color:#000000"></i>    
+        <h6 class="text">Reddit</h6>                                                
+    </a>
+</div>

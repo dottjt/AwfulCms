@@ -1,0 +1,15 @@
+<div class="admin_flex_column_container">
+    <h2>Edit Category</h2>
+    
+    <%= render "form.html", Map.put(assigns, :action, category_path(@conn, :update, @category)) %>
+        
+        <% if @sub_category do %>
+            <h2>Edit Sub category</h2>
+            
+            <%= render "form.html", Map.put(assigns, :action, sub_category_path(@conn, :update, @sub_category)) %>
+
+            <span><%= link "Back", to: sub_category_path(@conn, :index) %></span>
+        <% end %>
+
+    <span><%= link "Back", to: category_path(@conn, :index) %></span>
+</div>

@@ -1,0 +1,18 @@
+<main class="individual__container top_section__container">
+
+    <div class="header__container">
+        <div class="header">
+            <div class="icon__container">
+                <i class="fa <%= @product.category.icon %>" aria-hidden="true" style="color: white"></i>                                    
+            </div>
+        
+            <div class="header__title__container">
+                <h4 class="header__title"> <%= @product.category.display_name %></h4> 
+            </div>
+        </div>
+    </div> 
+    
+    <%= render_partial "individual_enum.html", assigns %>                        
+    
+</main>
+

@@ -1,0 +1,209 @@
+<%= form_for @changeset, @action, fn f -> %>
+<%= if @changeset.action do %>
+  <div class="alert alert-danger">
+    <p>Oops, something went wrong! Please check the errors below.</p>
+  </div>
+<% end %>
+
+<!-- <div class="field">
+  <%= label f, :name, class: "label" %>
+  <%= text_input f, :name, class: "control" %>
+  <%= error_tag f, :name %>
+</div> -->
+<div class="panel__product__container">
+  <div class="panel__product">
+    <div class="field">
+      <%= label f, :display_name, class: "label" %>
+      <%= text_input f, :display_name, class: "control" %>
+      <%= error_tag f, :display_name %>
+    </div>
+
+    <div class="field">
+      <%= label f, :price, class: "label" %>
+      <%= number_input f, :price, step: "any", class: "control" %>
+      <%= error_tag f, :price %>
+    </div>
+
+    <div class="field">
+      <%= label f, :description, class: "label" %>
+      <%= textarea f, :description, class: "checkbox" %>
+      <%= error_tag f, :description %>
+    </div>  
+
+    <div class="field">
+      <%= label f, :cta, class: "label" %>
+      <%= text_input f, :cta, class: "control" %>
+      <%= error_tag f, :cta %>
+    </div>
+  </div>
+
+  <div class="panel__product">
+    <div class="field">
+      <%= label f, :featured_image, class: "label" %>
+      <%= text_input f, :featured_image, class: "control" %>
+      <%= error_tag f, :featured_image %>
+    </div>
+
+    <div class="field">
+      <%= label f, :draft, class: "label" %>
+      <%= checkbox f, :draft, class: "checkbox" %>
+      <%= error_tag f, :draft %>
+    </div>
+
+    <div class="field">
+      <%= label f, :product_type, class: "label" %>
+      <%= text_input f, :product_type, class: "control" %>
+      <%= error_tag f, :product_type %>
+    </div>
+
+    <div class="field">
+      <%= label f, :url, class: "label" %>
+      <%= text_input f, :url, class: "control" %>
+      <%= error_tag f, :url %>
+    </div>
+  </div>
+
+<div class="panel__product">
+  
+    <%= inputs_for f, :product_like, fn fp -> %>
+      <div class="field">
+        <%= label fp, :total, class: "label" %>
+        <%= text_input fp, :total, class: "control" %>
+        <%= error_tag fp, :total %>
+      </div>
+    <% end %>
+    
+    <div class="field">
+        <label class="admin_title">Product Tags</label>
+        
+    </div>
+
+    <div class="field field-category">
+        <label class="label">Category</label>          
+        <%= multiple_select(f, :category_id, Enum.map(@categories, &{&1.name, &1.id})) %>
+    </div>
+
+    <div class="field field-sub-category">
+      <label class="admin_title">Sub Category</label>
+      <%= multiple_select(f, :sub_category_id, Enum.map(@sub_categories, &{&1.name, &1.id})) %>
+    </div>
+
+</div>
+
+</div>
+
+<!-- <div class="columns is-multiline">
+  <%= inputs_for f, :product_tags, fn fp -> %>
+    <div class="column is-3">
+      <div class="field">                                
+        <%= label fp, :name, class: "label" %>
+        <%= text_input fp, :name, class: "control" %>
+        <%= error_tag fp, :name %>
+        <p class="help">Required</p>
+      </div>
+      <div class="field">                      
+        <%= label fp, :display_name, class: "label" %>
+        <%= text_input fp, :display_name, class: "control" %>
+        <%= error_tag fp, :display_name %>
+        <p class="help">Required</p>
+      </div>
+      <div class="field">                      
+        <%= label fp, :description, class: "label" %>
+        <%= text_input fp, :description, class: "control" %>
+        <%= error_tag fp, :description %>
+        <p class="help">Required</p>
+      </div>  
+    </div>
+  <% end %>
+</div> -->
+
+
+
+
+<!--   
+<div class="columns is-multiline">
+  <%= inputs_for f, :category, fn fp -> %>
+    <div class="column is-3">
+      <div class="field">                                
+        <%= label fp, :name, class: "label" %>
+        <%= text_input fp, :name, class: "control" %>
+        <%= error_tag fp, :name %>
+        <p class="help">Required</p>
+      </div>
+      <div class="field">                      
+        <%= label fp, :display_name, class: "label" %>
+        <%= text_input fp, :display_name, class: "control" %>
+        <%= error_tag fp, :display_name %>
+        <p class="help">Required</p>
+      </div>
+      <div class="field">                      
+        <%= label fp, :description, class: "label" %>
+        <%= text_input fp, :description, class: "control" %>
+        <%= error_tag fp, :description %>
+        <p class="help">Required</p>
+      </div>  
+    </div>
+  <% end %>
+</div> -->
+
+
+<!--   
+<div class="columns is-multiline">
+  <%= inputs_for f, :sub_category, fn fp -> %>
+    <div class="column is-3">
+      <div class="field">                                
+        <%= label fp, :name, class: "label" %>
+        <%= text_input fp, :name, class: "control" %>
+        <%= error_tag fp, :name %>
+        <p class="help">Required</p>
+      </div>
+      <div class="field">                      
+        <%= label fp, :display_name, class: "label" %>
+        <%= text_input fp, :display_name, class: "control" %>
+        <%= error_tag fp, :display_name %>
+        <p class="help">Required</p>
+      </div>
+      <div class="field">                      
+        <%= label fp, :description, class: "label" %>
+        <%= text_input fp, :description, class: "control" %>
+        <%= error_tag fp, :description %>
+        <p class="help">Required</p>
+      </div>  
+    </div>
+  <% end %>
+</div>
+ -->
+
+<!-- <h3 class="admin_title">Product Comments</h3> -->
+<!--   
+<div class="columns is-multiline">
+  <%= inputs_for f, :product_comments, fn fp -> %>
+    <div class="column is-3">
+      <div class="field">                                
+        <%= label fp, :name, class: "label" %>
+        <%= text_input fp, :name, class: "control" %>
+        <%= error_tag fp, :name %>
+        <p class="help">Required</p>
+      </div>
+      <div class="field">                      
+        <%= label fp, :display_name, class: "label" %>
+        <%= text_input fp, :display_name, class: "control" %>
+        <%= error_tag fp, :display_name %>
+        <p class="help">Required</p>
+      </div>
+      <div class="field">                      
+        <%= label fp, :description, class: "label" %>
+        <%= text_input fp, :description, class: "control" %>
+        <%= error_tag fp, :description %>
+        <p class="help">Required</p>
+      </div>  
+    </div>
+  <% end %>
+</div> -->
+
+
+<div class="field">
+  <%= submit "Submit", class: "btn btn-primary" %>
+</div>
+
+<% end %>

@@ -1,0 +1,111 @@
+APP="ac"
+
+# SKIP_GIT_CLEAN="true"
+SKIP_MIX_CLEAN="true"
+
+# prevent re-installing node modules; this defaults to "."
+GIT_CLEAN_PATHS="_build rel priv/static"
+
+BUILD_HOST="172.104.62.173" 
+BUILD_USER="juliusr"
+BUILD_AT="/tmp/edeliver/$APP/builds"
+
+RELEASE_DIR="/tmp/edeliver/$APP/builds/_build/prod/rel/$APP"
+
+# STAGING_HOSTS="172.104.62.173"
+# STAGING_USER="juliusr"
+# TEST_AT="/home/juliusr/staging"
+
+PRODUCTION_HOSTS="172.104.62.173"
+PRODUCTION_USER="juliusr"
+DELIVER_TO="/home/juliusr"
+
+# For *Phoenix* projects, symlink prod.secret.exs to our tmp source
+pre_erlang_get_and_update_deps() {
+  local _prod_secret_path="/home/juliusr/secret/$APP/prod.secret.exs"
+  if [ "$TARGET_MIX_ENV" = "prod" ]; then
+    __sync_remote "
+      # mkdir $BUILD_AT/config
+      ln -sfn '$_prod_secret_path' '$BUILD_AT/config/prod.secret.exs'
+    "
+  fi
+}
+
+pre_erlang_clean_compile() {
+    status "Installing NPM dependencies"
+    __sync_remote "  # runs the commands on the build host
+      [ -f ~/.profile ] && source ~/.profile # load profile
+      set -e # fail if any command fails
+
+      cd '$BUILD_AT/assets' # go to the build directory on the build host
+      npm install --verbose
+      npm install --save https://github.com/brunch/sass-brunch.git
+    "
+
+    status "Building elm files"
+    __sync_remote "
+      [ -f ~/.profile ]
+      set -e
+
+      cd '$BUILD_AT/assets/elm'
+      yes | elm-package install
+    "
+
+    status "Building static files"
+    __sync_remote "
+      [ -f ~/.profile ]
+      set -e
+
+      cd '$BUILD_AT/assets'
+      mkdir -p priv/static
+      npm run deploy 
+    "
+
+    status "Running phx.digest"
+    __sync_remote "
+      [ -f ~/.profile ] && source ~/.profile
+      set -e
+
+      cd '$BUILD_AT'
+      APP='$APP' MIX_ENV='$TARGET_MIX_ENV' $MIX_CMD phx.digest
+    "
+}
+
+      # yes | elm-package install NoRedInk/elm-decode-pipeline
+      # yes | elm-package install carwow/elm-slider
+      # yes | elm-package install elm-lang/http
+      # yes | elm-package install elm-lang/navigation
+      # yes | elm-package install evancz/url-parser
+      # yes | elm-package install fapian/elm-html-aria
+
+
+# pre_erlang_clean_compile() {
+#   status "Running phx.digest" # log output prepended with "----->"
+#   __sync_remote " # runs the commands on the build host
+#     # [ -f ~/.profile ] && source ~/.profile # load profile (optional)
+#     source ~/.profile
+#     # echo \$PATH # check if rbenv is in the path
+#     set -e # fail if any command fails (recommended)
+#     cd '$BUILD_AT' # enter the build directory on the build host (required)
+#     # prepare something
+#     mkdir -p priv/static # required by the phoenix.digest task
+#     ( cd assets && npm install && ./node_modules/brunch/bin/brunch build --production )
+# # run your custom task
+#     APP='$APP' MIX_ENV='$TARGET_MIX_ENV' $MIX_CMD phx.digest $SILENCE
+#   "
+# }
+
+
+  # .deliver/config
+  # pre_erlang_clean_compile() {
+  #   status "Running phoenix.digest" # log output prepended with "----->"
+  #   __sync_remote " # runs the commands on the build host
+  #     [ -f ~/.profile ] && source ~/.profile # load profile (optional)
+  #     set -e # fail if any command fails (recommended)
+  #     cd '$BUILD_AT' # enter the build directory on the build host (required)
+  #     # prepare something
+  #     mkdir -p priv/static # required by the phoenix.digest task
+  #     # run your custom task
+  #     APP='$APP' MIX_ENV='$TARGET_MIX_ENV' $MIX_CMD phoenix.digest $SILENCE
+  #   "
+  # }

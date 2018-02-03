@@ -1,0 +1,50 @@
+<div class="admin_flex_column_container">    
+  <h2>Show Post</h2>
+
+  <ul>
+
+    <li>
+      <strong>Name:</strong>
+      <%= @post.name %>
+    </li>
+
+    <li>
+      <strong>Display name:</strong>
+      <%= @post.display_name %>
+    </li>
+
+    <li>
+      <strong>Author:</strong>
+      <%= @post.author %>
+    </li>
+  
+    <li>
+      <strong>Featured image:</strong>
+      <%= @post.featured_image %>
+    </li>
+
+    <li>
+      <strong>Excerpt:</strong>
+      <%= @post.excerpt %>
+    </li>
+
+    <li>
+      <strong>Post Type:</strong>
+      <%= @post.post_type %>
+    </li>
+      
+    <li>
+      <strong>Product Limit:</strong>
+      <%= @post.product_limit %>
+    </li>
+    
+    <!-- <li>
+      <strong>Tags:</strong>
+      <%#= @post.tag %>
+    </li> -->
+
+  </ul>
+
+  <span><%= link "Edit", to: post_path(@conn, :edit, @post) %></span>
+  <span><%= link "Back", to: post_path(@conn, :index) %></span>
+</div>

@@ -1,0 +1,32 @@
+<div class="pagination__container">        
+    <%= if @total_pages > 2 do %>
+        <div class="enum__outer">
+            <%= if @left_arrow == 0 do %>
+                <div class="pagination__inner">
+                    <a class="pagination" href="<%= page_path(@conn, :homepage)%>">
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>                                            
+                    </a>                 
+                </div>
+            <% else %>
+                <div class="pagination__inner">
+                    <a class="pagination" href="<%= page_path(@conn, :homepage_page, @left_arrow)%>">
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>                                            
+                    </a>
+                </div>
+            <% end %>
+
+            <%= Enum.map(@pagination_numbers, fn(number) -> %>
+            <!-- page number -->
+                <div class="pagination__inner">
+                    <a class="pagination" href="<%= page_path(@conn, :homepage_page, number)%>"><%= number %></a>
+                </div>
+            <% end) %>
+
+            <div class="pagination__inner">
+                <a class="pagination" href="<%= page_path(@conn, :homepage_page, @right_arrow)%>">
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>                            
+                </a>    
+            </div>    
+        </div>
+    <% end %>
+</div>

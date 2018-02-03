@@ -1,0 +1,115 @@
+<%= form_for @changeset_social_media, @action, fn f -> %>
+  <%= if @changeset_social_media.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="product_table__outer">
+    <table class="product_table">
+      <thead>
+        <tr>
+          <th>Product</th>     
+          <th>Created</th>     
+          <th>Filled?</th>     
+          <th>Fill</th>
+        </tr>
+      </thead>
+  
+      <tbody>            
+      <%= Enum.map(@products, fn(product) -> %>
+        <tr>
+          <td align="middle"><%= product.display_name %></td>
+          <td align="middle"><%= Timex.format!(Timex.to_datetime(product.inserted_at), "{D}-{M}-{YYYY}") %></td>
+          <td align="middle">
+            <%= if product.social_media do %>
+              yes 
+            <% else %>
+              no 
+            <% end %>
+          </td>
+          <td align="middle"><div class="prefillSocialMedia" data-product-id="<%= product.id %>">Fill Me</div></td>
+        </tr>
+      <% end) %>
+      </tbody>
+    </table>
+  </div>
+  
+  <div class="panel__product__container">
+      <div class="panel__product panel__product__left">
+        <div class="field">
+          <%= label f, :display_name, class: "label" %>
+          <%= text_input f, :display_name, class: "control sDisplayName" %>
+          <%= error_tag f, :display_name %>
+        </div>
+
+        <div class="field field-description">
+          <%= label f, :description, class: "label" %>
+          <%= textarea f, :description, class: "control sDescription" %>
+          <%= error_tag f, :description %>
+        </div>
+
+        <div class="field">
+          <%= label f, :tags, class: "label" %>
+          <%= textarea f, :tags, class: "control" %>
+          <%= error_tag f, :tags %>
+        </div>
+  
+        <div class="field">
+          <%= submit "Submit", class: "btn btn-primary" %>
+        </div>
+    
+      </div>
+
+      <div class="panel__product panel__product__right">     
+        <div class="field">
+          <%= label f, :draft, class: "label" %>
+          <%= checkbox f, :draft, class: "checkbox" %>
+          <%= error_tag f, :draft %>
+        </div>
+
+        <div class="field field-schedule">
+          <%= label f, :schedule_date, class: "label" %>
+          <%= date_select(f, :schedule_date, class: "checkbox sScheduleDate") %>
+          <%= error_tag f, :schedule_date %>
+        </div>    
+
+        <div class="field">
+          <%= label f, :facebook_code, class: "label" %>
+          <%= text_input f, :facebook_code, class: "control sFacebookCode" %>
+          <%= error_tag f, :facebook_code %>
+        </div>
+  
+        <div class="field">
+          <%= label f, :featured_image, class: "label" %>
+          <%= text_input f, :featured_image, class: "control sFeaturedImage" %>
+          <%= error_tag f, :featured_image %>
+        </div>
+
+        <div class="field">
+          <%= label f, :url, class: "label" %>
+          <%= text_input f, :url, class: "control sUrl" %>
+          <%= error_tag f, :url %>
+        </div>
+
+        <div class="field">
+          <%= label f, :image_caption, class: "label" %>
+          <%= text_input f, :image_caption, class: "control" %>
+          <%= error_tag f, :image_caption %>
+        </div>
+
+        <div class="field">
+          <p>"twitter_post"</p>
+          <p>"facebook_post"</p>
+          <p>"pinterest_post"</p>
+          <p>"tumblr_post"</p>
+        </div>
+
+        <div class="field">
+          <%= label f, :social_media_type, class: "label" %>
+          <%= text_input f, :social_media_type, class: "control" %>
+          <%= error_tag f, :social_media_type %>
+        </div>
+      </div>
+            
+<% end %>

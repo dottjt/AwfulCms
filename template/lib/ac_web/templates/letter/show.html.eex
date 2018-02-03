@@ -1,0 +1,23 @@
+<h2>Show Letter</h2>
+
+<ul>
+
+  <li>
+    <strong>Recipient:</strong>
+    <%= @letter.recipient %>
+  </li>
+
+  <li>
+    <strong>Subject:</strong>
+    <%= @letter.subject %>
+  </li>
+
+  <li>
+    <strong>Message:</strong>
+    <%= @letter.message %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: letter_path(@conn, :edit, @letter) %></span>
+<span><%= link "Back", to: letter_path(@conn, :index) %></span>

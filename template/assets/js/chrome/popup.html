@@ -1,0 +1,61 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>Getting Started Extension's Popup</title>
+    <style type="text/css">
+      body {
+        margin: 10px;
+        white-space: nowrap;
+      }
+
+      h1 {
+        font-size: 15px;
+      }
+
+      #container {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+
+    <script src="popup.js"></script>
+  </head>
+
+  <body>
+    <h1>Send Data</h1>
+
+    <div id="container">
+      <span>Choose a website</span>
+
+      <fieldset>
+        <label for="api_key">API key</label>
+        <input type="text" name="api_key" placeholder="api_key" /> 
+      </fieldset>
+
+      <fieldset>
+          <label for="api_key">Amazon ID</label>          
+          <input id="amazon_id" name="amazon_id" type="text">          
+      </fieldset>
+
+
+      <select id="websiteDropdown">
+        <option selected="selected" value="awfulchristmas">Awful Christmas</option>
+        <option value="awfulfashion">Awful Fashion</option>
+        <option value="awful90s">Awful 90s</option>
+        <option value="awfulpet">Awful Pet</option>
+        <option value="awfulwedding">Awful Wedding</option>
+      </select>
+
+      <button id="sendDataButton">
+        send
+      </button>
+
+    </div>
+  </body>
+</html>

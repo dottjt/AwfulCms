@@ -1,0 +1,119 @@
+<!-- Layer four -->
+
+<div class="sidebar__container">
+
+    <!-- sidebar search - one -->
+    <div class="sidebar__search">
+        <div class="sidebar__title__container">
+            <h4 class="sidebar__title">search awful.</h4>
+        </div>
+                
+        <div class="sidebar__search__container">
+            <%= form_for @conn, page_path(@conn, :search), [as: :query], fn f -> %>
+                <%= search_input f, :query, class: "control search" %>
+                <button class="submit" type="submit">
+                    <i class="fa fa-chevron-right icon" aria-hidden="true"></i>
+                </button>
+            <% end %>
+        </div>
+    </div>   
+    
+    <!-- sidebar introduction - two -->
+    <div class="sidebar__introduction">
+        <div class="sidebar__title__container">
+            <h4 class="sidebar__title">letters awful.</h4> 
+        </div>
+                
+        <div class="text">
+            <p>dear santa.</p>
+            <p>i hate you.</p>
+            <p>i got a piece of coal last year and it wasn't even the piece of coal i wanted.</p>
+            <p>i vow to only send awful gifts this christmas to avenge my coal.</p>
+            <p>signed.</p>
+            <p>the internet.</p>
+
+            <!-- <a href="<%#= page_path(@conn, :letter) %>">write to santa.</a> -->
+        </div>
+    </div>   
+    
+    <!-- popular awful (3) - three -->
+    <div class="sidebar__popular">
+        <div class="sidebar__title__container">
+            <h4 class="sidebar__title">popular awful.</h4> 
+        </div>
+        
+        <%= render_partial "sidebar_enum.html", %{sidebar_products: @popular_products, conn: @conn, triangle: true} %>                
+    </div>
+        
+    <!-- social awful - four -->
+    <div class="sidebar__social">
+        <div class="sidebar__title__container">
+            <h4 class="sidebar__title">social awful.</h4> 
+        </div>        
+        <%= render_partial "sidebar_social.html", assigns %>                
+    </div> 
+
+
+    <!-- bargain awful (2) - five -->
+    <div class="sidebar__bargain">
+        <div class="sidebar__title__container">
+            <h4 class="sidebar__title">bargains awful.</h4> 
+        </div>
+
+        <%= render_partial "sidebar_enum.html", %{sidebar_products: @bargain_products, conn: @conn, triangle: false} %>                
+        
+    </div>
+
+    <!-- awful categories - six -->
+    <div class="sidebar__categories sidebar__social">
+        <div class="sidebar__title__container">
+            <h4 class="sidebar__title">categories awful.</h4> 
+        </div>
+        <div class="social__container">
+            <%= Enum.map(@categories, fn(category) -> %>
+                <a class="social__item" href="<%= page_path @conn, :category, category.name %>">
+                    <i class="fa <%= category.icon %> icon" aria-hidden="true"></i>                            
+                    <h6 class="text"><%= category.display_name %></h6>                                                
+                </a>
+            <% end) %>                    
+        </div>
+    </div>
+
+    <!-- random awful (2) - seven -->
+    <div class="sidebar__random__awful">
+        <div class="sidebar__title__container">
+            <h4 class="sidebar__title">random awful.</h4> 
+        </div>
+
+        <%= render_partial "sidebar_enum.html", %{sidebar_products: @random_products, conn: @conn, triangle: false} %>                
+    </div>
+    
+
+    <div class="sidebar__grid">
+        <div class="sidebar__title__container">
+            <h4 class="sidebar__title">grid awful.</h4> 
+        </div>
+        <div class="grid__image__container">
+            <p class="grid__text">Discover more awful products from our wonderful grid product page!</p>
+            <a href="" class="grid__button">
+                <i class="fa fa-th-large" aria-hidden="true"></i>  
+                <h5 class="grid__button__text">gifts.</h5>
+            </a>
+            <p class="grid__text">You want to be cool, right?</p>
+            <p class="grid__text" style="margin: 0;">Regards,</p>
+            <p class="grid__text">Your Awfulness</p>
+            
+            <!-- <img class="grid__image" src="" alt=""/>     -->
+
+        </div>
+    </div> 
+
+    <!--
+    <div class="sidebar__seven">
+        <div class="sidebar__title__container">
+            <h4 class="sidebar__title">deals awful.</h4> 
+        </div>
+    </div> -->
+    
+
+</div>

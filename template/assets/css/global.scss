@@ -1,0 +1,136 @@
+// css variables 
+@import "variables";
+
+@mixin flex-center() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-center-column() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@mixin flex-column() {
+    display: flex;
+    flex-direction: column;
+}
+
+// common html
+.uttermost__container {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.uttermost__overlay {
+    position: absolute;
+
+    width: 100vw;
+    height: 100%;
+
+    background: black;
+    opacity: 0.5;
+
+    // otherwise everything else goes white.
+    z-index: 200;
+
+    display:none;
+}
+
+.admin__uttermost__container {
+    background: white;
+}
+
+h1 {    
+    font-family: 'Slabo 13px', serif;
+    font-weight: 100;
+
+    text-decoration: none;  
+    
+    font-size: 1.6rem!important;
+    margin: 0!important;
+}
+
+h2 {
+    font-family: 'Slabo 13px', serif;    
+    font-weight: 100;
+
+    text-decoration: none;  
+    
+    font-size: 1.8rem!important; 
+    margin: 0!important;
+}
+
+h3 {
+    font-family: 'Slabo 13px', serif;    
+    text-decoration: none;  
+    font-weight: 100;    
+    
+    font-size: 1.6rem!important;
+    margin: 0!important;
+}
+
+h4 {
+    font-family: 'Slabo 13px', serif;   
+    text-decoration: none;  
+    font-weight: 100;
+    
+    font-size: 1.2rem!important;
+    margin: 0!important;    
+}
+
+h5 {
+    font-family: 'Slabo 13px', serif;
+    text-decoration: none;  
+    font-weight: 100;
+    
+    font-size: 1rem!important;
+    margin: 0!important;        
+}
+
+h6 {
+    font-family: 'Slabo 13px', serif;
+    text-decoration: none;  
+    font-weight: 100;
+    
+    margin: 0!important;      
+}
+
+p, a, label {
+    font-family: 'Slabo 13px', serif;
+    font-weight: 100;
+    
+    text-decoration: none;  
+    line-height: 1.55rem;
+}
+
+.title__container {
+    display: flex;
+    align-items: center;
+    
+    min-height: 6rem;
+    height: 4.5rem;
+    max-width: 20rem;
+    
+    background: white;                        
+    border: 5px solid black;
+
+    padding-left: 1rem;
+    
+    // border: 0!important;
+    .title {
+        transition: color .2s ease, text-shadow .1s ease;
+        color: $text-colour;        
+    }
+
+}
+
+
+

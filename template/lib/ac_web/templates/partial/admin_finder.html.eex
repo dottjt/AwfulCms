@@ -1,0 +1,65 @@
+<div class="product__finder__container">
+
+    <h3>Amazon Product Finder</h3>
+    <div class="amazon__product__finder">        
+        <div class="field">
+            B0143RT8OY
+            <label for="">asin id</label>
+            <input id="amazon__keyword" type="text"/>
+            
+            <button id="amazon__button">get em'</button>    
+        </div>
+    </div>
+
+
+    <h3>Etsy Product Finder</h3>
+    <div id="etsy__product__finder" class="etsy__product__finder">
+        <div class="field">
+            <label for="">listing id</label>
+            <input id="etsy__keyword" type="text"/>
+            <button id="etsy__button">get me!</button>            
+        </div>
+    </div>
+    
+</div>
+
+
+
+
+
+
+        <!-- <div class="field field-category">
+            <select id="amazon__select" multiple>
+                <option value="Apparel">Apparel</option>
+                <option value="Automotive">Automotive</option>
+                <option value="Baby">Baby</option>
+                <option value="Beauty">Beauty</option>
+                <option value="Books">Books</option>
+                <option value="Photo">Camera &amp; Photo</option>
+                <option value="PCHardware">Computers</option>
+                <option value="DVD">DVD</option>
+                <option value="Electronics">Electronics</option>
+            </select>                    
+                
+            <select id="amazon__select__two" multiple>
+                <option value="GourmetFood">Gourmet Food</option>
+                <option value="HealthPersonalCare">Health &amp; Personal Care</option>            
+                <option value="Jewelry">Jewelry &amp; Watches</option>
+                <option value="Kitchen">Kitchen &amp; Housewares</option>
+                <option value="Magazines">Magazines</option>
+                <option value="Music">Music</option>
+                <option value="MusicalInstruments">Musical Instruments</option>
+                <option value="OfficeProducts">Office Products</option>
+                <option value="OutdoorLiving">Garden</option>                                
+            </select>               
+
+            <select id="amazon__select__three" multiple>                    
+                <option value="PetSupplies">Pet Supplies</option>
+                <option value="VHS">Video</option>
+                <option value="Software">Software</option>
+                <option value="SportingGoods">Sports &amp; Outdoors</option>
+                <option value="Toys">Toys &amp; Games</option>
+                <option value="Tools">Tools &amp; Hardware</option>
+                <option value="VideoGames">VideoGames</option>
+            </select>
+        </div> -->

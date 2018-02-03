@@ -1,0 +1,5 @@
+<h2>New Social media</h2>
+
+<%= render "form.html", Map.put(assigns, :action, social_media_path(@conn, :create)) %>
+
+<span><%= link "Back", to: social_media_path(@conn, :index) %></span>

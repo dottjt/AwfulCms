@@ -1,0 +1,25 @@
+<div class="admin_flex_column_container">    
+  <h2>Show Tag</h2>
+
+  <ul>
+
+    <li>
+      <strong>Name:</strong>
+      <%= @tag.name %>
+    </li>
+
+    <li>
+      <strong>Display name:</strong>
+      <%= @tag.display_name %>
+    </li>
+
+    <li>
+      <strong>Description:</strong>
+      <%= @tag.description %>
+    </li>
+
+  </ul>
+
+  <span><%= link "Edit", to: tag_path(@conn, :edit, @tag) %></span>
+  <span><%= link "Back", to: tag_path(@conn, :index) %></span>
+</div>

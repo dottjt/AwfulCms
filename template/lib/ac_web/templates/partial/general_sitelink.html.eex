@@ -1,0 +1,75 @@
+<div class="sitelinks__container">
+    <div class="sitelink__column__block">               
+        <div class="sitelink__column">
+            <h5 class="column__title">awful general.</h5>    
+            <div class="enum__outer">
+                <div class="sitelink__inner">
+                    <a class="sitelink" href="<%= page_path(@conn, :homepage)%>">homepage.</a>
+                </div>
+                <div class="sitelink__inner">
+                    <a class="sitelink" href="<%= page_path(@conn, :about)%>">about.</a>
+                </div>
+                <div class="sitelink__inner">
+                    <a class="sitelink" href="<%= page_path(@conn, :grid)%>">grid.</a>
+                </div>
+                <div class="sitelink__inner">
+                    <a class="sitelink" href="<%= page_path(@conn, :blog)%>">blog.</a>
+                </div>
+                <div class="sitelink__inner">
+                    <a class="sitelink" href="<%= page_path(@conn, :updates)%>">updates.</a>
+                </div>
+                <div class="sitelink__inner">
+                    <a class="sitelink" href="<%= page_path(@conn, :submit)%>">submit.</a>
+                </div>
+                <div class="sitelink__inner">
+                    <a class="sitelink" href="<%= page_path(@conn, :about)%>">about.</a>
+                </div>
+                <div class="sitelink__inner">
+                    <a class="sitelink" href="<%= page_path(@conn, :contact)%>">contact.</a>
+                </div>     
+                <div class="sitelink__inner">
+                    <a class="sitelink" href="<%= page_path(@conn, :register)%>">register.</a>
+                </div>                                                                          
+                <div class="sitelink__inner">
+                    <a class="sitelink" href="<%= page_path(@conn, :login)%>">login.</a>
+                </div>                                                                          
+            </div>
+        </div>
+        <div class="sitelink__column">
+            <h5 class="column__title">awful categories.</h5>    
+            <div class="enum__outer">
+                <%= Enum.map(@category_sitelinks, fn(category) -> %>   
+                    <div class="sitelink__inner">
+                        <a class="sitelink" href="<%= page_path(@conn, :category, category.name)%>"><%= category.display_name %></a>
+                    </div>
+                <% end) %>
+            </div>            
+        </div>
+    </div>
+
+    <div class="sitelink__column__block"> 
+        <div class="sitelink__column">
+            <h5 class="column__title">awful posts.</h5>    
+            <div class="enum__outer">
+                <%= Enum.map(@post_sitelinks, fn(post) -> %>
+                    <div class="sitelink__inner">
+                        <a class="sitelink" href="<%= page_path(@conn, :post, post.name)%>"><%= post.display_name %></a>
+                    </div>
+                <% end) %>
+            </div>
+        </div>
+    
+        <div class="sitelink__column">
+            <h5 class="column__title">awful updates.</h5>    
+            <div class="enum__outer">    
+                <%= Enum.map(@update_sitelinks, fn(update) -> %>
+                    <div class="sitelink__inner">
+                        <a class="sitelink" href="<%= page_path(@conn, :update, update.name)%>"><%= update.display_name %></a>
+                    </div>
+                <% end) %>
+            </div>
+        </div>                   
+    </div>
+</div>
+
+    

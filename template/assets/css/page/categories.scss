@@ -1,0 +1,130 @@
+@import "../global"; @import "../variables"; 
+
+
+.categories__container {
+    background: white;
+
+    .enum__outer {
+        margin-top: 0.5rem;
+    }
+}
+
+// parent - enum__outer
+.categories__inner {
+    margin-bottom: 3rem;
+    position: relative;
+
+    .title__container {
+        position: relative;
+        min-height: 5rem;
+
+        .title {
+            position: relative;
+            bottom: 0.5rem;
+            
+            a, .icon {
+                color: $primary-colour;                                            
+            }
+
+            .icon {
+                position: relative;
+                bottom: 0.2rem;
+            }
+        }
+
+        .total {
+            position: absolute;
+            bottom: 8px;
+            left: 16px;    
+            text-decoration: none;
+            color: $primary-colour;
+        }
+
+        .view__all {
+            position: absolute;
+            bottom: 6px;
+            right: 10px;  
+            color: black;  
+        }
+    }
+
+    // .statistics__container {
+
+    // }
+
+    // .excerpt__container {
+    //     .excerpt {
+
+    //     }
+    // }
+}
+
+// parent - categories__inner
+.product__enum__outer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+// parent - product__enum__outer 
+.product__enum__inner {
+
+    border: 1px solid black;
+
+    // for mobile 
+    width: 100%;                
+            
+    .product__title__container {
+        display: block;
+        border: 1px solid black;
+        padding: 1rem;
+
+        min-height: 50px;
+
+        .product__title {
+        }
+    }
+
+
+    .image__container {
+        overflow: hidden;
+        height: 100px;
+        
+        .image {
+            max-width: 100%;                    
+            width: 100%;
+        }
+    }
+}
+
+
+@media screen and (min-width: 560px) {
+    // .categories__container {
+    //     .product__enum__outer {
+    //     }
+    // }
+
+    .product__enum__inner {
+        // reverse mobile
+        width: 250px;
+    }
+        
+}
+
+@media screen and (min-width: 650px) {
+    // .categories__container {
+    //     .product__enum__outer {
+    //     }
+    // }
+    .product__enum__inner {
+        // reverse mobile
+        width: 250px;
+
+        .image__container {
+            .image {
+                // reverse mobile
+                max-width: 340px;
+            }
+        }
+    }
+
+}

@@ -1,0 +1,131 @@
+<%= form_for @changeset, @action, [multipart: :true], fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+ <div class="panel__product__container">
+  <div class="panel__product panel__product__left">
+    <!-- <div class="field">
+      <%= label f, :name, class: "label" %>
+      <%= textarea f, :name, class: "control pDisplayName" %>
+      <%= error_tag f, :name %>
+    </div>
+
+    <div class="field">
+      <%= label f, :url_text, class: "label" %>
+      <%= textarea f, :url_text, class: "control pDisplayName" %>
+      <%= error_tag f, :url_text %>
+    </div> -->
+
+    <div class="success">
+          <%= get_flash(@conn, :info) %>
+    </div>
+
+    <div class="field field-displayname">
+      <%= label f, :display_name, class: "label" %>
+      <span class="displayNameCount"></span>      
+      <%= textarea f, :display_name, required: "", class: "control pDisplayName" %>
+      <%= error_tag f, :display_name %>
+    </div>
+
+    <div class="field field-description">
+      <%= label f, :description, class: "label" %>
+      <span class="descriptionCount"></span>            
+      <%= textarea f, :description, required: "", class: "control pDescription" %>
+      <%= error_tag f, :description %>
+    </div>  
+    
+    <div class="field field-description">
+      <%= label f, :blog_description, class: "label" %>
+      <span class="blogDescriptionCount"></span>            
+      <%= textarea f, :blog_description, required: "", class: "control pBlogDescription" %>
+      <%= error_tag f, :blog_description %>
+    </div>  
+      
+    <div class="field">
+      <%= submit "Submit", class: "submit" %>
+    </div>
+  
+  </div>
+
+  <div class="panel__product panel__product__right">
+    <div class="field">
+      <%= label f, :draft, class: "label" %>
+      <%= checkbox f, :draft, class: "checkbox pDraft" %>
+      <%= error_tag f, :draft %>
+    </div>
+
+    <div class="field field-schedule">
+      <%= label f, :schedule_date, class: "label" %>
+      <%= date_select(f, :schedule_date, class: "checkbox pScheduleDate") %>
+      <%= error_tag f, :schedule_date %>
+    </div>
+
+    <div class="field field-category">
+        <label class="label">Category</label>          
+        <%= multiple_select(f, :category_id, Enum.map(@categories, &{&1.name, &1.id}), class: "pCategory") %>
+    </div>
+
+    <!-- <div class="field field-category">
+      <label class="admin_title">Sub Category</label>
+      <%= multiple_select(f, :sub_category_id, Enum.map(@sub_categories, &{&1.name, &1.id}), class: "pSubCategory") %>
+    </div> -->
+
+    <div class="field field-category">
+      <label class="label">Tag</label>
+      <%= multiple_select(f, :tag_id, Enum.map(@tags, &{&1.name, &1.id}), class: "pProductTag") %>
+    </div>
+  
+    <div class="field">
+      <%= label f, :original_featured_image, class: "label" %>
+      <%= text_input f, :original_featured_image, accept: "image/*", class: "control pOriginalFeaturedImage" %>
+      <%= error_tag f, :original_featured_image %>
+    </div>
+    
+    <div class="field">
+      <%= label f, :url, class: "label" %>
+      <%= text_input f, :url, required: "", class: "control pUrl" %>
+      <%= error_tag f, :url %>
+    </div>
+
+    <div class="field">
+      <%= label f, :featured_image, class: "label" %>
+      <%= text_input f, :featured_image, accept: "image/*", required: "", class: "control pFeaturedImage" %>
+      <%= error_tag f, :featured_image %>
+    </div>
+
+    <div class="field">
+      <%= label f, :price, class: "label" %>
+      <%= number_input f, :price, step: "any", required: "", class: "control pPrice" %>
+      <%= error_tag f, :price %>
+    </div>
+    
+    <div class="field">
+      <%= label f, :cta, class: "label" %>
+      <%= text_input f, :cta, required: "", class: "control pCta" %>
+      <%= error_tag f, :cta %>
+    </div>
+
+    <%= inputs_for f, :product_like, fn fp -> %>
+      <div class="field">
+        <%= label fp, :total, class: "label" %>
+        <%= text_input fp, :total, required: "", class: "control, pProductLike" %>
+        <%= error_tag fp, :total %>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= label f, :product_type, class: "label" %>
+      <%= text_input f, :product_type, required: "", class: "control pProductType" %>
+      <%= error_tag f, :product_type %>
+    </div>
+
+  </div>
+
+</div>
+
+<% end %>
+
+

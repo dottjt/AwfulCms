@@ -1,0 +1,51 @@
+
+
+-- keyDownDevelopmentCommand : Model -> List KeyCode -> String -> WebsitesDropdown -> Cmd Msg
+-- keyDownDevelopmentCommand model keysDown devOrProd developmentDropdown =
+--   case keysDown of 
+--     68 :: 82 :: [] -> -- dur - dr 
+--       command "dur_all" devOrProd developmentDropdown.acronym
+--     68 :: 67 :: [] -> -- durc - dc
+--       command "durc_all" devOrProd developmentDropdown.acronym
+--     67 :: 65 :: [] -> -- ca - ca
+--       command "compile_all" devOrProd developmentDropdown.acronym
+--     67 :: 83 :: [] -> -- cs - cs 
+--       command "compile_single" devOrProd developmentDropdown.acronym
+--     68 :: 65 :: [] -> -- da - da
+--       command "delete_all" devOrProd developmentDropdown.acronym
+--     68 :: 83 :: [] -> -- ds - ds 
+--       command "delete_single" devOrProd developmentDropdown.acronym
+--     69 :: 65 :: [] -> -- eca - ea
+--       command "ecto_create_all" devOrProd developmentDropdown.acronym
+--     69 :: 83 :: [] -> -- ecs - es
+--       command "ecto_migrate_all" devOrProd developmentDropdown.acronym
+--     69 :: 82 :: [] -> -- era - er
+--       command "ecto_reset_all" devOrProd developmentDropdown.acronym
+--     85 :: 65 :: [] -> -- ua - ua
+--       command "update_all" devOrProd developmentDropdown.acronym
+--     85 :: 83 :: [] -> -- us - us
+--       command "update_single" devOrProd developmentDropdown.acronym
+--     80 :: 76 :: [] -> -- pl - pl
+--       command "pull_all" devOrProd developmentDropdown.acronym
+--     -- 80 :: 83 :: [] -> -- ps - ps 
+--     --   command "pull_single" devOrProd developmentDropdown.acronym
+--     -- 80 :: 65 :: [] -> -- pa - pa
+--     --   command "push_all" devOrProd developmentDropdown.acronym
+--     80 :: 73 :: [] -> -- pi - pi
+--       command "push_single" devOrProd developmentDropdown.acronym
+--     80 :: 77 :: [] -> -- pm - pm
+--       command "push_awful_manager" devOrProd developmentDropdown.acronym
+-- --     84 :: 73 :: [] -> -- ti - ti
+-- --       command "transfer_images" devOrProd developmentDropdown.acronym
+-- --     66 :: 83 :: [] -> -- bs - bs
+-- --       command "build_single" devOrProd developmentDropdown.acronym
+
+--     -- 83 :: 83 :: [] -> -- ss - ss
+--     --   command "start_single" devOrProd developmentDropdown.acronym
+--     -- 83 :: 80 :: [] -> -- sp - sp
+--     --   command "stop_single" devOrProd developmentDropdown.acronym
+--     82 :: 83 :: [] -> -- rs - rs
+--       command "restart_single" devOrProd developmentDropdown.acronym
+--     _ -> 
+--       command "" devOrProd ""
+

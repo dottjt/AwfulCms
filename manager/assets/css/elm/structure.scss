@@ -1,0 +1,194 @@
+@import '../common';
+
+#elm-manager {
+    width: 100%;
+}
+
+.overview__container,
+.production__container,
+.development__container,
+.build__container,
+.websites__container,
+.config__container {
+    @include flex-column();
+}
+
+.view__container {
+    @include flex-center-column();
+    
+    font-family: Arial, Helvetica, sans-serif;
+
+    .top__container {
+        @include flex-center-column();
+        width: 100%;
+
+        // margin-bottom: 2rem;
+    }
+
+    .bottom__container {
+        display: flex;
+        
+        width: 100%;
+        padding-left: 3rem;
+
+        margin-bottom: 3rem;
+
+        .bottom__left__container {
+            @include flex-column();
+
+            width: 100%;
+
+            padding-right: 1rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+
+            margin-top: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+    }
+}
+
+
+.navbar__container {
+    @include flex-center-column();    
+    justify-content: space-around;
+
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+
+    .navbar__item {
+        font-size: 1.5rem;
+    }
+}
+
+.navbar__status {
+    display: flex;
+
+    // border: 1px solid black;
+
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+
+
+.console__container {
+    // border: 1px solid black;
+    overflow: scroll;
+
+    max-width: 500px;
+    width: 500px;
+    
+    height: 100vh;
+
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    .console__top {
+        height: 7rem;
+
+        .console__h2 {
+          margin-top: 0!important;
+          margin-bottom: 1rem!important;
+          
+        }
+    }
+    
+
+}
+
+
+.development__container {
+
+    .command__button {
+        @include flex-column();
+    }
+}
+
+// build component
+.domain__setup__buttons {
+    @include flex-column();
+}
+
+
+.update__production__container {
+    display: flex;
+    align-items: center;
+}
+
+.console__item {
+  display: flex;
+
+  margin-bottom: 1rem;
+}
+
+.main__component__top {
+  @include flex-center();
+
+  justify-content: space-around;
+
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  h2 {
+    margin: 0!important;
+  }
+}
+
+.margin-bottom-2rem {
+  margin-bottom: 2rem;
+}
+
+
+.button-width-50px {
+  width: 50px;
+}
+
+.button-width-135px {
+  min-width: 180px;
+} 
+
+.product__finder__container {
+  display: flex;
+}
+
+.server_status_indicator {
+  width: 15px;
+  height: 15px;
+}
+
+
+.keyboard__helper {
+  position: fixed;
+  
+  top: 0;
+  left: 0;
+
+  width: 90%;
+  height: 90%;
+
+  border: 1px solid black;
+  background: white; 
+  z-index: 100;
+  
+}
+
+
+.current__task {
+  display: flex;
+}
+
+
+.field-description {
+  .textarea {
+    height: 170px;
+  }
+}

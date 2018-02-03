@@ -1,0 +1,14 @@
+/_build
+/cover
+/deps
+/db
+/assets/node_modules
+/assets/elm/elm-stuff
+/assets/js/elm.js
+/tmp
+erl_crash.dump
+*.ez
+*.beam
+/priv/static
+.env
+.deliver/releases/

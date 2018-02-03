@@ -1,0 +1,60 @@
+<div class="enum__outer">
+    <%= Enum.map(@products, fn(product) -> %>
+        <div class="product__inner">
+            <div class="left-right-container">
+                <div class="left">
+                    <div class="image__container">
+                        <%= img_tag(product.featured_image, class: "image")  %>                                
+                    </div>
+    
+                    <a class="price__container" href="<%= product.url %>">
+                        <div class="price">
+                            <h3>
+                                $<%= product.price %>    
+                            </h3>
+                            <h6>
+                                <%= product.url_text %>                                    
+                            </h6>
+                        </div>
+                    </a>
+                </div>
+        
+                <div class="right">
+                    <div class="top-right">
+                        <a class="title__container" href="<%= page_path @conn, :individual, product.name %>">
+                            <h2 class="title">
+                                <%= product.display_name %>
+                            </h2>
+                        </a>
+                        <div class="cta__container" >       
+                            <a href="" target="_blank">
+                                <h3 class="cta">
+                                    <%= product.cta %>                                        
+                                </h3>
+                            </a>
+                            <div class="cta__overlay">
+                                <h3 class="overlay">
+                                    Yeaahhh
+                                </h3>
+                            </div>                                    
+                        </div>
+                    </div> <!-- end top-right -->
+        
+                    <div class="bottom-right">
+                        <p class="description">
+                            <%= product.description %>                                                                
+                        </p>
+                        <h5 class="social_media_share">share me!</h5>
+                        <%= render_partial "product_social_media.html", conn: @conn, product: product %>        
+                                
+                        <p class="likes">
+                            <i class="fa <%= product.category.icon %>" aria-hidden="true" style="color:red"></i>    
+                            <%= product.product_like.total %> saves.                             
+                        </p>
+                    </div>
+                </div> <!-- end right -->
+            </div> <!-- end left-right-container -->
+            <div class="bottom-bar"></div> <!-- end bottom-bar -->            
+        </div> <!-- end enum__inner --> 
+    <% end) %>        
+</div> <!-- end enum__outer --> 

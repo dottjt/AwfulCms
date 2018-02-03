@@ -1,0 +1,49 @@
+<div class="enum__outer">
+    <div class="categories__inner">              
+        <div class="title__container">
+            <h2 class="title">
+                <a href="<%= page_path(@conn, :category, @category.name)%>">
+                    <%= @category.display_name %>                        
+                </a>
+                <i class="fa icon <%= @category.icon %>" aria-hidden="true"></i>
+            </h2>
+                
+            <!-- <h5 class="total" >
+                Total products: <%#= @product_count %>
+            </h5> -->
+
+            <h4 class="view__all">
+                <a href="<%= page_path(@conn, :category, @category.name)%>">
+                    view all.
+                </a>
+            </h4>
+        </div>
+        
+        <!-- <div class="excerpt__container">
+            <p class="excerpt">
+                <%= @category.description %>
+            </p>
+        </div> -->
+        <div class="description__container">
+            <h4 class="description">
+                <%= @category.description %>
+            </h4>
+        </div>
+                
+        <!-- <div class="product__enum__outer">
+            <%#= Enum.map(@category.products, fn(product) -> %>
+                <div class="product__enum__inner">
+                    <div class="image__container">
+                        <%#= img_tag(product.featured_image, class: "image")  %>        
+                    </div>
+                    
+                    <a class="product__title__container" href="<%#= page_path(@conn, :individual, product.name)%>">
+                        <h4 class="product__title">
+                            <%#= product.display_name %>
+                        </h4>
+                    </a>
+                </div>
+            <%# end) %>
+        </div> -->
+    </div>
+</div>

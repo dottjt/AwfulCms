@@ -1,0 +1,9 @@
+<div class="enum__outer">
+    <%= Enum.map(@letters, fn(letter) -> %>
+        <div class="letter__inner">
+            <h5>Dear Santa,</h5>
+            
+
+        </div>
+    <% end) %>
+</div>

@@ -1,0 +1,88 @@
+<div class="product__index" style="margin-left: 3rem;">    
+  <h2>Listing Products</h2>
+
+  <span><%= link "New Product", to: product_path(@conn, :new) %></span>  
+
+  <table class="product-table">
+    <thead>
+      <tr>
+        <th>edit</th>
+        <th>Name</th>
+        <th>Display Name</th>
+        <th>Price</th>
+        <th>Cta</th>
+
+        <th>Featured Image</th>
+        <th>Draft</th>
+        <th>Product Type</th>
+        <th>Url</th>
+
+        <th>Description</th>
+        <th>PC Name</th>
+        <th>PC Display Name</th>
+        <th>PC Description</th>
+        
+        <th>SC Name</th>
+        <th>SC Display Name</th>
+        <th>SC Description</th>
+
+        <th>Tag Name</th>
+        <!-- <th>Tag Display Name</th>
+        <th>Tag Description</th> -->
+
+      </tr>
+    </thead>
+    
+    <tbody>
+      <%= for product <- @products do %>
+        <tr>
+          <td>
+            <span><%= link "edit", to: product_path(@conn, :edit, product), class: "thingy" %></span>
+            <span><%= link "show", to: product_path(@conn, :show, product), class: "thingy" %></span>
+            <span><%= link "delete", to: product_path(@conn, :delete, product), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+          </td>
+
+          <td><%= product.name %></td>
+          <td><%= product.display_name %></td>
+          <td><%= product.price %></td>        
+          <td><%= product.cta %></td>  
+
+          <td><%= product.featured_image %></td>      
+          <td><%= product.draft %></td>
+          <td><%= product.product_type %></td>
+          <td><%= product.url %></td>
+
+          <td><%= product.description %></td>
+          <td><%= product.blog_description %></td>
+          
+          <%= if product.category do %>          
+            <td><%= product.category.name %></td>
+            <td><%= product.category.display_name %></td>
+            <td><%= product.category.description %></td>
+          <% end %>
+            
+          <%= if product.sub_category do %>
+            <td><%= product.sub_category.name %></td>
+            <td><%= product.sub_category.display_name %></td>
+            <td><%= product.sub_category.description %></td>
+          <% end %>
+
+          <%= if product.product_tags do %>
+            <%= for p <- product.product_tags do %>
+              <td><%= p.name %></td>
+              <!-- <td><%= p.display_name %></td>
+              <td><%= p.description %></td> -->
+            <% end %>
+          <% end %>
+            
+          <%= if product.product_tags do %>          
+            <%= for p <- product.product_comments do %>
+              <td><%= p.text %></td>
+            <% end %>
+          <% end%>
+          
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

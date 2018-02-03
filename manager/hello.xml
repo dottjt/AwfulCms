@@ -1,0 +1,341 @@
+<?xml version="1.0" ?>
+<ItemLookupResponse
+    xmlns="http://webservices.amazon.com/AWSECommerceService/2013-08-01">
+    <OperationRequest>
+        <HTTPHeaders>
+            <Header Name="UserAgent" Value="hackney/1.10.1"></Header>
+        </HTTPHeaders>
+        <RequestId>4d5e9348-a3a7-4853-b2e2-1559bae5eeb3</RequestId>
+        <Arguments>
+            <Argument Name="AWSAccessKeyId" Value="AKIAJ2ALVRWC6O5INEOQ"></Argument>
+            <Argument Name="AssociateTag" Value="readeassociat-20"></Argument>
+            <Argument Name="Condition" Value="New"></Argument>
+            <Argument Name="IdType" Value="ASIN"></Argument>
+            <Argument Name="IncludeReviewsSummary"></Argument>
+            <Argument Name="ItemId" Value="B0143RT8OY"></Argument>
+            <Argument Name="MerchantId"></Argument>
+            <Argument Name="Operation" Value="ItemLookup"></Argument>
+            <Argument Name="RelatedItemPage"></Argument>
+            <Argument Name="RelationshipType"></Argument>
+            <Argument Name="ResponseGroup" Value="ItemAttributes,Images"></Argument>
+            <Argument Name="SearchIndex"></Argument>
+            <Argument Name="Service" Value="AWSECommerceService"></Argument>
+            <Argument Name="Signature" Value="jRphwn5dEw9VYndQXiIeknBtRYqYYsBMkTMBdF4gZos="></Argument>
+            <Argument Name="Timestamp" Value="2018-01-29T03:54:31.018519Z"></Argument>
+            <Argument Name="TruncateReviewsAt"></Argument>
+            <Argument Name="VariationPage"></Argument>
+            <Argument Name="Version" Value="2013-08-01"></Argument>
+        </Arguments>
+        <RequestProcessingTime>0.0050524110000000</RequestProcessingTime>
+    </OperationRequest>
+    <Items>
+        <Request>
+            <IsValid>True</IsValid>
+            <ItemLookupRequest>
+                <Condition>New</Condition>
+                <IdType>ASIN</IdType>
+                <ItemId>B0143RT8OY</ItemId>
+                <ResponseGroup>ItemAttributes</ResponseGroup>
+                <ResponseGroup>Images</ResponseGroup>
+                <VariationPage>All</VariationPage>
+            </ItemLookupRequest>
+        </Request>
+        <Item>
+            <ASIN>B0143RT8OY</ASIN>
+            <ParentASIN>B015FYSR9G</ParentASIN>
+            <DetailPageURL>https://www.amazon.com/SanDisk-Ultra-Class-Memory-SDSDUNC-032G-GN6IN/dp/B0143RT8OY?psc=1&amp;SubscriptionId=AKIAJ2ALVRWC6O5INEOQ&amp;tag=readeassociat-20&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=B0143RT8OY</DetailPageURL>
+            <ItemLinks>
+                <ItemLink>
+                    <Description>Technical Details</Description>
+                    <URL>https://www.amazon.com/SanDisk-Ultra-Class-Memory-SDSDUNC-032G-GN6IN/dp/tech-data/B0143RT8OY?SubscriptionId=AKIAJ2ALVRWC6O5INEOQ&amp;tag=readeassociat-20&amp;linkCode=xm2&amp;camp=2025&amp;creative=386001&amp;creativeASIN=B0143RT8OY</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Baby Registry</Description>
+                    <URL>https://www.amazon.com/gp/registry/baby/add-item.html?asin.0=B0143RT8OY&amp;SubscriptionId=AKIAJ2ALVRWC6O5INEOQ&amp;tag=readeassociat-20&amp;linkCode=xm2&amp;camp=2025&amp;creative=386001&amp;creativeASIN=B0143RT8OY</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Wedding Registry</Description>
+                    <URL>https://www.amazon.com/gp/registry/wedding/add-item.html?asin.0=B0143RT8OY&amp;SubscriptionId=AKIAJ2ALVRWC6O5INEOQ&amp;tag=readeassociat-20&amp;linkCode=xm2&amp;camp=2025&amp;creative=386001&amp;creativeASIN=B0143RT8OY</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Add To Wishlist</Description>
+                    <URL>https://www.amazon.com/gp/registry/wishlist/add-item.html?asin.0=B0143RT8OY&amp;SubscriptionId=AKIAJ2ALVRWC6O5INEOQ&amp;tag=readeassociat-20&amp;linkCode=xm2&amp;camp=2025&amp;creative=386001&amp;creativeASIN=B0143RT8OY</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>Tell A Friend</Description>
+                    <URL>https://www.amazon.com/gp/pdp/taf/B0143RT8OY?SubscriptionId=AKIAJ2ALVRWC6O5INEOQ&amp;tag=readeassociat-20&amp;linkCode=xm2&amp;camp=2025&amp;creative=386001&amp;creativeASIN=B0143RT8OY</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Customer Reviews</Description>
+                    <URL>https://www.amazon.com/review/product/B0143RT8OY?SubscriptionId=AKIAJ2ALVRWC6O5INEOQ&amp;tag=readeassociat-20&amp;linkCode=xm2&amp;camp=2025&amp;creative=386001&amp;creativeASIN=B0143RT8OY</URL>
+                </ItemLink>
+                <ItemLink>
+                    <Description>All Offers</Description>
+                    <URL>https://www.amazon.com/gp/offer-listing/B0143RT8OY?SubscriptionId=AKIAJ2ALVRWC6O5INEOQ&amp;tag=readeassociat-20&amp;linkCode=xm2&amp;camp=2025&amp;creative=386001&amp;creativeASIN=B0143RT8OY</URL>
+                </ItemLink>
+            </ItemLinks>
+            <SmallImage>
+                <URL>https://images-na.ssl-images-amazon.com/images/I/51MMGGrKpkL._SL75_.jpg</URL>
+                <Height Units="pixels">75</Height>
+                <Width Units="pixels">61</Width>
+            </SmallImage>
+            <MediumImage>
+                <URL>https://images-na.ssl-images-amazon.com/images/I/51MMGGrKpkL._SL160_.jpg</URL>
+                <Height Units="pixels">160</Height>
+                <Width Units="pixels">130</Width>
+            </MediumImage>
+            <LargeImage>
+                <URL>https://images-na.ssl-images-amazon.com/images/I/51MMGGrKpkL.jpg</URL>
+                <Height Units="pixels">500</Height>
+                <Width Units="pixels">405</Width>
+            </LargeImage>
+            <ImageSets>
+                <ImageSet Category="variant">
+                    <SwatchImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/512tmtu3n4L._SL30_.jpg</URL>
+                        <Height Units="pixels">30</Height>
+                        <Width Units="pixels">20</Width>
+                    </SwatchImage>
+                    <SmallImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/512tmtu3n4L._SL75_.jpg</URL>
+                        <Height Units="pixels">75</Height>
+                        <Width Units="pixels">50</Width>
+                    </SmallImage>
+                    <ThumbnailImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/512tmtu3n4L._SL75_.jpg</URL>
+                        <Height Units="pixels">75</Height>
+                        <Width Units="pixels">50</Width>
+                    </ThumbnailImage>
+                    <TinyImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/512tmtu3n4L._SL110_.jpg</URL>
+                        <Height Units="pixels">110</Height>
+                        <Width Units="pixels">73</Width>
+                    </TinyImage>
+                    <MediumImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/512tmtu3n4L._SL160_.jpg</URL>
+                        <Height Units="pixels">160</Height>
+                        <Width Units="pixels">107</Width>
+                    </MediumImage>
+                    <LargeImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/512tmtu3n4L.jpg</URL>
+                        <Height Units="pixels">500</Height>
+                        <Width Units="pixels">333</Width>
+                    </LargeImage>
+                    <HiResImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/81SgeIoq43L.jpg</URL>
+                        <Height Units="pixels">2050</Height>
+                        <Width Units="pixels">1367</Width>
+                    </HiResImage>
+                </ImageSet>
+                <ImageSet Category="variant">
+                    <SwatchImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/51JvIeaZayL._SL30_.jpg</URL>
+                        <Height Units="pixels">30</Height>
+                        <Width Units="pixels">20</Width>
+                    </SwatchImage>
+                    <SmallImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/51JvIeaZayL._SL75_.jpg</URL>
+                        <Height Units="pixels">75</Height>
+                        <Width Units="pixels">50</Width>
+                    </SmallImage>
+                    <ThumbnailImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/51JvIeaZayL._SL75_.jpg</URL>
+                        <Height Units="pixels">75</Height>
+                        <Width Units="pixels">50</Width>
+                    </ThumbnailImage>
+                    <TinyImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/51JvIeaZayL._SL110_.jpg</URL>
+                        <Height Units="pixels">110</Height>
+                        <Width Units="pixels">73</Width>
+                    </TinyImage>
+                    <MediumImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/51JvIeaZayL._SL160_.jpg</URL>
+                        <Height Units="pixels">160</Height>
+                        <Width Units="pixels">106</Width>
+                    </MediumImage>
+                    <LargeImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/51JvIeaZayL.jpg</URL>
+                        <Height Units="pixels">500</Height>
+                        <Width Units="pixels">332</Width>
+                    </LargeImage>
+                    <HiResImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/91%2B1aBqlteL.jpg</URL>
+                        <Height Units="pixels">2050</Height>
+                        <Width Units="pixels">1360</Width>
+                    </HiResImage>
+                </ImageSet>
+                <ImageSet Category="variant">
+                    <SwatchImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/41TQk4uQEdL._SL30_.jpg</URL>
+                        <Height Units="pixels">22</Height>
+                        <Width Units="pixels">30</Width>
+                    </SwatchImage>
+                    <SmallImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/41TQk4uQEdL._SL75_.jpg</URL>
+                        <Height Units="pixels">55</Height>
+                        <Width Units="pixels">75</Width>
+                    </SmallImage>
+                    <ThumbnailImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/41TQk4uQEdL._SL75_.jpg</URL>
+                        <Height Units="pixels">55</Height>
+                        <Width Units="pixels">75</Width>
+                    </ThumbnailImage>
+                    <TinyImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/41TQk4uQEdL._SL110_.jpg</URL>
+                        <Height Units="pixels">81</Height>
+                        <Width Units="pixels">110</Width>
+                    </TinyImage>
+                    <MediumImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/41TQk4uQEdL._SL160_.jpg</URL>
+                        <Height Units="pixels">117</Height>
+                        <Width Units="pixels">160</Width>
+                    </MediumImage>
+                    <LargeImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/41TQk4uQEdL.jpg</URL>
+                        <Height Units="pixels">367</Height>
+                        <Width Units="pixels">500</Width>
+                    </LargeImage>
+                    <HiResImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/71e1TaeZ-rL.jpg</URL>
+                        <Height Units="pixels">1468</Height>
+                        <Width Units="pixels">2000</Width>
+                    </HiResImage>
+                </ImageSet>
+                <ImageSet Category="variant">
+                    <SwatchImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/51RRSAET1tL._SL30_.jpg</URL>
+                        <Height Units="pixels">30</Height>
+                        <Width Units="pixels">30</Width>
+                    </SwatchImage>
+                    <SmallImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/51RRSAET1tL._SL75_.jpg</URL>
+                        <Height Units="pixels">75</Height>
+                        <Width Units="pixels">74</Width>
+                    </SmallImage>
+                    <ThumbnailImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/51RRSAET1tL._SL75_.jpg</URL>
+                        <Height Units="pixels">75</Height>
+                        <Width Units="pixels">74</Width>
+                    </ThumbnailImage>
+                    <TinyImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/51RRSAET1tL._SL110_.jpg</URL>
+                        <Height Units="pixels">110</Height>
+                        <Width Units="pixels">109</Width>
+                    </TinyImage>
+                    <MediumImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/51RRSAET1tL._SL160_.jpg</URL>
+                        <Height Units="pixels">160</Height>
+                        <Width Units="pixels">158</Width>
+                    </MediumImage>
+                    <LargeImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/51RRSAET1tL.jpg</URL>
+                        <Height Units="pixels">500</Height>
+                        <Width Units="pixels">495</Width>
+                    </LargeImage>
+                    <HiResImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/81LLALUzJGL.jpg</URL>
+                        <Height Units="pixels">2000</Height>
+                        <Width Units="pixels">1978</Width>
+                    </HiResImage>
+                </ImageSet>
+                <ImageSet Category="primary">
+                    <SwatchImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/51MMGGrKpkL._SL30_.jpg</URL>
+                        <Height Units="pixels">30</Height>
+                        <Width Units="pixels">24</Width>
+                    </SwatchImage>
+                    <SmallImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/51MMGGrKpkL._SL75_.jpg</URL>
+                        <Height Units="pixels">75</Height>
+                        <Width Units="pixels">61</Width>
+                    </SmallImage>
+                    <ThumbnailImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/51MMGGrKpkL._SL75_.jpg</URL>
+                        <Height Units="pixels">75</Height>
+                        <Width Units="pixels">61</Width>
+                    </ThumbnailImage>
+                    <TinyImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/51MMGGrKpkL._SL110_.jpg</URL>
+                        <Height Units="pixels">110</Height>
+                        <Width Units="pixels">89</Width>
+                    </TinyImage>
+                    <MediumImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/51MMGGrKpkL._SL160_.jpg</URL>
+                        <Height Units="pixels">160</Height>
+                        <Width Units="pixels">130</Width>
+                    </MediumImage>
+                    <LargeImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/51MMGGrKpkL.jpg</URL>
+                        <Height Units="pixels">500</Height>
+                        <Width Units="pixels">405</Width>
+                    </LargeImage>
+                    <HiResImage>
+                        <URL>https://images-na.ssl-images-amazon.com/images/I/91t2w5TZ2RL.jpg</URL>
+                        <Height Units="pixels">2560</Height>
+                        <Width Units="pixels">2072</Width>
+                    </HiResImage>
+                </ImageSet>
+            </ImageSets>
+            <ItemAttributes>
+                <AspectRatio>Unknown</AspectRatio>
+                <Binding>Personal Computers</Binding>
+                <Brand>SanDisk</Brand>
+                <CatalogNumberList>
+                    <CatalogNumberListElement>##-SANDISK--SDSDUNC-032G-GN6IN</CatalogNumberListElement>
+                    <CatalogNumberListElement>LN72296</CatalogNumberListElement>
+                    <CatalogNumberListElement>90624918</CatalogNumberListElement>
+                    <CatalogNumberListElement>147543</CatalogNumberListElement>
+                </CatalogNumberList>
+                <EAN>0619659136611</EAN>
+                <EANList>
+                    <EANListElement>0619659136611</EANListElement>
+                    <EANListElement>4056572752478</EANListElement>
+                </EANList>
+                <Feature>Great choice for compact to mid-range point and shoot cameras</Feature>
+                <Feature>Twice As Fast As Ordinary SDHC Cards, Allowing You To Take Pictures And Transfer Files Quickly</Feature>
+                <Feature>Exceptional video recording performance with Class 10 rating for Full HD video (1080p)</Feature>
+                <Feature>Quick transfer speeds up to 80MB/s and Waterproof, temperature-proof, X-ray proof, magnet-proof, shockproof</Feature>
+                <Feature>10-year limited warranty</Feature>
+                <IsAutographed>0</IsAutographed>
+                <IsMemorabilia>0</IsMemorabilia>
+                <ItemDimensions>
+                    <Height Units="hundredths-inches">9</Height>
+                    <Length Units="hundredths-inches">124</Length>
+                    <Weight Units="Hundredths Pounds">1</Weight>
+                    <Width Units="hundredths-inches">94</Width>
+                </ItemDimensions>
+                <Label>SanDisk</Label>
+                <LegalDisclaimer>No Returns.</LegalDisclaimer>
+                <ListPrice>
+                    <Amount>1299</Amount>
+                    <CurrencyCode>USD</CurrencyCode>
+                    <FormattedPrice>$12.99</FormattedPrice>
+                </ListPrice>
+                <Manufacturer>SanDisk</Manufacturer>
+                <Model>SDSDUNC-032G-GN6IN</Model>
+                <MPN>SDSDUNC-032G-GN6IN</MPN>
+                <NumberOfItems>1</NumberOfItems>
+                <PackageDimensions>
+                    <Height Units="hundredths-inches">50</Height>
+                    <Length Units="hundredths-inches">600</Length>
+                    <Weight Units="Hundredths Pounds">50</Weight>
+                    <Width Units="hundredths-inches">400</Width>
+                </PackageDimensions>
+                <PackageQuantity>1</PackageQuantity>
+                <PartNumber>SDSDUNC-032G-GN6IN</PartNumber>
+                <Platform>Windows Server 2008</Platform>
+                <ProductGroup>Personal Computer</ProductGroup>
+                <ProductTypeName>COMPUTER_INPUT_DEVICE</ProductTypeName>
+                <Publisher>SanDisk</Publisher>
+                <Size>32GB</Size>
+                <Studio>SanDisk</Studio>
+                <Title>SanDisk 32GB Ultra Class 10 SDHC UHS-I Memory Card Up to 80MB, Grey/Black (SDSDUNC-032G-GN6IN)</Title>
+                <UPC>619659136611</UPC>
+                <UPCList>
+                    <UPCListElement>619659136611</UPCListElement>
+                </UPCList>
+                <Warranty>10 Year Limited warranty</Warranty>
+            </ItemAttributes>
+        </Item>
+    </Items>
+</ItemLookupResponse>

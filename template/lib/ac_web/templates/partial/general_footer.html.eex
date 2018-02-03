@@ -1,0 +1,12 @@
+<footer class="footer__container">
+    <div class="brand">
+        <img class="image" src="<%= static_path(@conn, Application.get_env(:ac, :website_logo_svg))%>" alt="<%= Application.get_env(:ac, :website_name)%> Logo">
+        <h4 class="title"><%= Application.get_env(:ac, :website_name_lower) %>. ®</h4>        
+    </div>
+    
+    <div class="attribute">
+        <h6>Made with love in <a class="link" href="https://en.wikipedia.org/wiki/Melbourne">Melbourne, Australia</a> <3.</h6>
+        <!--  by <a class="link" href="https://juliusreade.com/">Awful Santa</a>  -->
+    </div>
+</footer>
+

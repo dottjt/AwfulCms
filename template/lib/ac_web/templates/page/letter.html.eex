@@ -1,0 +1,21 @@
+<div class="letter__container full_width__container">
+    <div class="title__container">
+        <img src="<%= static_path(@conn, Application.get_env(:ac, :website_logo_svg))%>" alt="<%= Application.get_env(:ac, :website_name)%> Logo">
+        <h2 class="title">Send Santa a letter!</h2>
+    </div> 
+
+    <div class="text__container">
+
+    </div>
+
+    <div class="letter__form">
+        <%= render AcWeb.LetterView, "form.html", Map.put(assigns, :action, letter_path(@conn, :create)) %>            
+    </div>
+
+    <div class="letter__outer">
+        Send to santa!
+    </div>
+
+    <%= render_partial "letter_enum.html", assigns %>                        
+
+</div>

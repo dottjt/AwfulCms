@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= render_partial "general_head.html", assigns %>
+  </head>
+
+  <body>
+    <div class="uttermost__container">
+      <div class="uttermost__overlay"></div>  
+      <%= render_partial "modal_login.html", assigns %>
+  
+      <!-- logo/trendingbox -->
+      <section class="layer_one">
+        <%= render_partial "navbar_logo.html", assigns %>        
+        <%= render_partial "navbar_menu.html", assigns %>        
+        <%= render_partial "general_login.html", assigns %>                  
+      </section>
+      
+      <!-- main/sidebar -->
+      <section class="layer_four_full_width">
+        <%= render @view_module, @view_template, assigns %>
+      </section>
+
+      <!-- footer -->
+      <section class="layer_five">
+        <%= render_partial "general_footer.html", assigns %>        
+      </section>
+    </div>   
+    <script src="<%= static_path(@conn, "/js/vendor.js")%>"></script>        
+    <script src="<%= static_path(@conn, "/js/app.js")%>"></script>
+  </body>
+</html>
+

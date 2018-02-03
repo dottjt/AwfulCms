@@ -1,0 +1,8 @@
+<!-- Layer one -->
+<a class="logo__container sky " href="<%= page_path(@conn, :homepage)%>">   
+    <div class="navbar__logo">
+        <img class="logo__image" src="<%= static_path(@conn, Application.get_env(:ac, :website_logo_svg))%>" alt="<%= Application.get_env(:ac, :website_name)%> Logo">
+        
+        <h1 class="logo__title"><%= Application.get_env(:ac, :website_name_lower) %>.</h1>            
+    </div>
+</a>

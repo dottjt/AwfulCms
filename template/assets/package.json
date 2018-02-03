@@ -1,0 +1,42 @@
+{
+  "version": "1.0.0",
+  "repository": {},
+  "license": "MIT",
+  "scripts": {
+    "deploy": "brunch build --production",
+    "deploy_ac": "cp css_variables/ac_variables.scss css/variables.scss && brunch build --production",
+    "deploy_af": "cp css_variables/af_variables.scss css/variables.scss && brunch build --production",
+    "deploy_ap": "cp css_variables/ap_variables.scss css/variables.scss && brunch build --production",    
+    "deploy_ach": "cp css_variables/ach_variables.scss css/variables.scss && brunch build --production",
+    "deploy_apo": "cp css_variables/apo_variables.scss css/variables.scss && brunch build --production",    
+    "deploy_aw": "cp css_variables/aw_variables.scss css/variables.scss && brunch build --production",    
+    "deploy_ahp": "cp css_variables/ahp_variables.scss css/variables.scss && brunch build --production",    
+    "deploy_a9": "cp css_variables/a9_variables.scss css/variables.scss && brunch build --production",    
+    "watch": "brunch watch --stdin",
+    "elm-watch": "cd elm && elm-live src/*.elm --pushstate --output dist/bundle.js --debug",
+    "test": "elm-test"
+  },
+  "dependencies": {
+    "axios": "^0.17.1",
+    "binstall": "^1.2.0",
+    "bulma": "^0.6.1",
+    "chai": "^4.1.2",
+    "copycat-brunch": "^1.1.0",
+    "font-awesome": "^4.7.0",
+    "jssha": "^2.3.1",
+    "phoenix": "file:../deps/phoenix",
+    "phoenix_html": "file:../deps/phoenix_html",
+    "xml2js": "^0.4.19",
+    "elm": "^0.18.0"
+  },
+  "devDependencies": {
+    "babel-brunch": "6.1.1",
+    "brunch": "2.10.12",
+    "sass-brunch": "git+https://github.com/brunch/sass-brunch.git",
+    "clean-css-brunch": "^2.10.0",
+    "elm-brunch": "^0.10.0",
+    "elm-live": "^2.6.0",
+    "elm-test": "^0.18.9",
+    "uglify-js-brunch": "2.10.0"
+  }
+}

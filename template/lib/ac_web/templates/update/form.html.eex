@@ -1,0 +1,56 @@
+<%= form_for @changeset_update, @action, fn f -> %>
+  <%= if @changeset_update.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="panel__product__container">
+    
+    <div class="panel__product panel__product__left">
+      <div class="field">
+        <%= label f, :display_name, class: "label" %>
+        <%= text_input f, :display_name, class: "control" %>
+        <%= error_tag f, :display_name %>
+      </div>
+  
+      <div class="field">
+        <%= label f, :title, class: "label" %>
+        <%= text_input f, :title, class: "control" %>
+        <%= error_tag f, :title %>
+      </div>  
+
+      <div class="field field-description">
+        <%= label f, :excerpt, class: "label" %>
+        <%= textarea f, :excerpt, class: "control" %>
+        <%= error_tag f, :excerpt %>
+      </div>   
+  
+    </div>
+
+    <div class="panel__product panel__product__right">
+        <div class="field">
+          <%= label f, :draft, class: "label" %>
+          <%= checkbox f, :draft, class: "control" %>
+          <%= error_tag f, :draft %>
+        </div>
+
+        <div class="field field-schedule">
+          <%= label f, :schedule_date, class: "label" %>
+          <%= date_select(f, :schedule_date, class: "checkbox pScheduleDate") %>
+          <%= error_tag f, :schedule_date %>
+        </div>      
+  
+        <div class="field">
+          <%= label f, :author, class: "label" %>
+          <%= text_input f, :author, class: "control" %>
+          <%= error_tag f, :author %>
+        </div>
+    </div>
+
+  </div>
+
+  <div class="field">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

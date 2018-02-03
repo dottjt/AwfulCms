@@ -1,0 +1,13 @@
+<div class="admin_flex_column_container">        
+    <h2>New Category</h2>
+
+    <%= render "form.html", Map.put(assigns, :action, category_path(@conn, :create)) %>
+
+        <h2>New Sub Category</h2>
+        
+        <%= render "sub_form.html", Map.put(assigns, :action, sub_category_path(@conn, :create)) %>
+    
+        <span><%= link "Back", to: sub_category_path(@conn, :index) %></span>
+
+    <span><%= link "Back", to: category_path(@conn, :index) %></span>
+</div>

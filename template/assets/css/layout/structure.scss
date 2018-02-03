@@ -1,0 +1,46 @@
+@import "../global"; @import "../variables"; 
+
+// structure
+
+.layer_one, .layer_three {
+    @include flex-center-column();    
+}
+
+.layer_four {    
+    display: flex;
+    justify-content: center;
+    align-items: start;    
+}
+
+.layer_four_full_width {    
+    @include flex-center-column();    
+    width: 100%;
+
+    .elm__grid {
+        @include flex-center-column();            
+        width: 100%;    
+    }
+}
+
+.admin_layer_one {
+    @include flex-center();
+}
+
+.admin_layer_four {
+    @include flex-center-column();    
+    // except for product index page 
+}
+
+.uttermost_products_table {
+    background: white;
+}
+
+.admin_layer_four_products_table {
+    // no styling needed. 
+}
+
+.layer_five {
+    @include flex-center-column();
+    
+}
+

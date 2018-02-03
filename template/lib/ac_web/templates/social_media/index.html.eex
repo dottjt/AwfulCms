@@ -1,0 +1,40 @@
+<h2>Listing Social media</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Display name</th>
+      <th>Description</th>
+      <th>Tags</th>
+      <th>Featured image</th>
+      <th>Image caption</th>
+      <th>Draft</th>
+      <th>Social media type</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for social_media <- @social_media do %>
+    <tr>
+      <td><%= social_media.name %></td>
+      <td><%= social_media.display_name %></td>
+      <td><%= social_media.description %></td>
+      <td><%= social_media.tags %></td>
+      <td><%= social_media.featured_image %></td>
+      <td><%= social_media.image_caption %></td>
+      <td><%= social_media.draft %></td>
+      <td><%= social_media.social_media_type %></td>
+
+      <td class="text-right">
+        <span><%= link "Show", to: social_media_path(@conn, :show, social_media), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Edit", to: social_media_path(@conn, :edit, social_media), class: "btn btn-default btn-xs" %></span>
+        <span><%= link "Delete", to: social_media_path(@conn, :delete, social_media), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Social media", to: social_media_path(@conn, :new) %></span>

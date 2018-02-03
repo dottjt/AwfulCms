@@ -1,0 +1,23 @@
+// #7C24FD maybe this purple instead? 
+
+$primary-colour: #7C24FD; // #c13dff  
+$secondary-colour: green;
+$text-colour: rgb(0, 132, 255);
+
+$cta-background: black;
+$cta-colour: rgb(145, 111, 39);
+$cta-shadow-colour: green;
+
+$cta-overlay-background: purple;
+$cta-overlay-colour: yellow;
+
+$grid-inner-border-right: yellow;
+
+$border-grey: rgb(231, 231, 231);
+
+body {
+    background-color: #f6f6f6;
+    background-color: #fffefe;
+    background-color: #ffffff; background-size: 210px;
+    background-image: url("/images/ahp/AHPP.svg");
+}    

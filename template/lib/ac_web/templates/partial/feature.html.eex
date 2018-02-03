@@ -1,0 +1,17 @@
+<div class="feature__container top_section__container">
+    
+    <div class="header__container">
+        <div class="header">
+            <div class="icon__container">
+                <i class="fa fa-star spinning-star" aria-hidden="true" style="color:white;"></i>                                    
+            </div>
+        
+            <div class="header__title__container">
+                <h4 class="header__title">featured awful.</h4> 
+            </div>
+        </div>
+    </div>  
+          
+    <%= render_partial "product_enum.html", %{ blog_description: false, products: @feature_products, conn: @conn} %>            
+
+</div>

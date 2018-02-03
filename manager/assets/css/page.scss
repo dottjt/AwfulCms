@@ -1,0 +1,45 @@
+@import 'common';
+
+* {
+  font-family: 'Slabo 13px', serif; 
+  font-weight: 100;
+}
+
+
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 2rem;
+}
+
+.header {
+  width: 45rem;
+
+
+  .intro-header {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+  }
+
+}
+
+.intro {
+  width: 45rem;
+
+
+  .intro-title {
+    font-size: 2.1rem;
+    margin-bottom: 4rem;
+  }  
+}
+
+.fuck-off {
+  text-align: center;
+  font-size: 25rem;
+  line-height: 25rem;
+  font-family: 'Arial', serif; 
+  
+}

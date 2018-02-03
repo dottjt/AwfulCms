@@ -1,0 +1,19 @@
+{
+    "manifest_version": 2,
+  
+    "name": "Awful Christmas API Sender",
+    "description": "Allows you to send production information to the Awful application.",
+    "version": "1.0",
+
+    "browser_action": {
+      "default_icon": "logo.ico",
+      "default_popup": "popup.html",
+      "default_title": "This is awful company"
+    },
+
+    "permissions": [
+      "activeTab",
+      "storage"
+    ]
+  }
+  

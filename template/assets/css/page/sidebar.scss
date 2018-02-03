@@ -1,0 +1,201 @@
+@import "../global"; @import "../variables"; 
+
+/* Sidebar */
+
+.sidebar__container {
+    .enum__outer {
+        @include flex-column();
+    }
+}
+
+// parent - sidebar__container
+.sidebar__title__container {
+    display: flex;
+    align-items: center;
+    height: 2.5rem;
+    
+    padding-left: 1rem;
+    
+    border-top: 1px solid $border-grey;
+    border-bottom: 1px solid $border-grey;
+    
+    box-shadow: 0 4px 4px -2px rgba(0,0,0,0.1);
+    
+    background: $primary-colour;
+    
+    .sidebar__title {
+        margin: 0;
+        color: white;
+    }
+}
+
+// parent - sidebar__container
+.sidebar__search {
+    height: 100px;
+}
+
+// parent - sidebar__search
+
+.sidebar__search__container {
+    @include flex-center();
+    padding-top: 0.8rem;
+    
+    form {
+        @include flex-center();
+        padding-left: 0.2rem;
+
+        .search {
+            width: 230px;
+            height: 35px;
+        }    
+
+        .submit {
+            @include flex-center();    
+            position: relative;                
+            background: white;
+
+            border: 1px solid $secondary-colour;
+            border-radius: 0;
+            width: 35px;
+            height: 35px;
+        }    
+
+        .icon {
+            color: $primary-colour;
+        }
+    }
+}
+
+// parent - sidebar__container
+.sidebar__introduction {
+    
+    .text {
+        position: relative;
+        bottom: 0.5rem;    
+        padding: 1rem;
+        max-width: 300px;
+
+        a {
+            color: $primary-colour;
+        }
+    }
+}
+
+
+// parent - sidebar__container
+.sidebar__popular {
+    .title__container:hover .title {
+        color: #c466ff;
+        text-shadow: 3px 3px #68f9ff;
+    }    
+}
+
+
+// parent - sidebar__container
+.sidebar__bargain {
+    .title:hover {
+        color: #66ffe5;
+        text-shadow: 3px 3px #68f9ff;
+    }
+}
+
+
+// parent - sidebar__container
+// .sidebar__social {
+// }
+
+// parent - sidebar__social
+.social__container {
+    @include flex-center();
+    flex-direction: column;
+}
+
+// parent - social__container
+.social__item {
+    display: flex;
+    align-items: center;
+    
+    width: 89%;
+    height: 40px;
+    
+    font-size: 1.3rem;
+    color: black;
+    
+    .icon {
+        @include flex-center();
+        width: 20px;
+        color: $secondary-colour;
+    }
+    
+    .text {
+        margin-left: 1rem!important;
+    }
+}
+
+// parent - social__container
+// .sidebar__categories {
+    
+// }
+
+// parent - social__container
+.sidebar__random__awful {
+    .title {
+        transition: color .2s ease, text-shadow .1s ease;
+    }
+
+    .title:hover {
+        color: greenyellow;
+        text-shadow: 3px 3px #68f9ff;
+    }
+}
+
+
+// parent - social__container
+.sidebar__grid {
+    padding-bottom: 1.47rem;
+
+    .grid__image__container {
+        @include flex-center-column();
+        
+    }
+
+    .grid__text {
+        max-width: 300px;
+        width: 100%;
+        text-align: left;
+    }
+}
+
+
+// parent - sidebar__grid
+.grid__button {
+    @include flex-center-column();                    
+    
+    position: relative;
+    top: 0;
+
+    
+    // width: 120px;
+    width: 90%;
+    height: 70px;    
+
+    background: $primary-colour;
+    
+    border: 4px solid $secondary-colour; 
+    border-radius: 3px;  
+    
+    color: white;
+
+    transition: top .1s ease, transform .2s ease;
+
+    .grid__button__text {
+        position: relative;
+        top: 0.1rem;
+
+        text-align: center;
+    }
+}
+
+.grid__button:hover {
+    border: 4px solid $cta-colour; 
+}

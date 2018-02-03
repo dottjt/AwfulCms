@@ -1,0 +1,18 @@
+<h2>Show Websites</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @websites.name %>
+  </li>
+
+  <li>
+    <strong>Acronym:</strong>
+    <%= @websites.acronym %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: websites_path(@conn, :edit, @websites) %></span>
+<span><%= link "Back", to: websites_path(@conn, :index) %></span>

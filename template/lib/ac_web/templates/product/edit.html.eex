@@ -1,0 +1,7 @@
+<div class="admin_flex_column_container">        
+    <h2>Edit Product</h2>
+
+    <%= render "formEdit.html", Map.put(assigns, :action, product_path(@conn, :update, @product)) %>
+
+    <span><%= link "Back", to: product_path(@conn, :index) %></span>
+</div>

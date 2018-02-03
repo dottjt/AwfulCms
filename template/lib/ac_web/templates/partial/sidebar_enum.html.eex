@@ -1,0 +1,27 @@
+<div class="enum__outer">
+    <%= Enum.map(@sidebar_products, fn(product) -> %>
+        <a class="sidebar__inner" href="<%= page_path @conn, :individual, product.name %>">
+            <%= img_tag(product.featured_image, class: "image")  %> 
+
+            <%= if @triangle do %>
+                <div class="triangle__container">
+                    <div class="triangle">
+                        <i class="fa fa-star" aria-hidden="true"></i>                                    
+                    </div>
+                </div>
+            <% end%>
+
+            <div class="title__container">
+                <div class="title__overlay"></div>                            
+                <h3 class="title">
+                    <%= product.display_name %>
+                </h3>        
+            </div>
+            <div class="price__container">
+                <h4 class="price">
+                    $<%= product.price %>
+                </h4>                                
+            </div>
+        </a>
+    <% end) %>
+</div>

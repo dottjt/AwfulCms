@@ -1,0 +1,48 @@
+<h2>Show Social media</h2>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @social_media.name %>
+  </li>
+
+  <li>
+    <strong>Display name:</strong>
+    <%= @social_media.display_name %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @social_media.description %>
+  </li>
+
+  <li>
+    <strong>Tags:</strong>
+    <%= @social_media.tags %>
+  </li>
+
+  <li>
+    <strong>Featured image:</strong>
+    <%= @social_media.featured_image %>
+  </li>
+
+  <li>
+    <strong>Image caption:</strong>
+    <%= @social_media.image_caption %>
+  </li>
+
+  <li>
+    <strong>Draft:</strong>
+    <%= @social_media.draft %>
+  </li>
+
+  <li>
+    <strong>Social media type:</strong>
+    <%= @social_media.social_media_type %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: social_media_path(@conn, :edit, @social_media) %></span>
+<span><%= link "Back", to: social_media_path(@conn, :index) %></span>
