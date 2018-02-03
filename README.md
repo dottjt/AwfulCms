@@ -1,5 +1,7 @@
 **Note: These files are merely for potential employers to see my code**. The actual updated project is maintained within a private repository.
 
+**Note: This project is in active development and production websites may be broken at times.** 
+
 **Note: This thing is sufficiently complex and does significantly more than can be summarised.** Regardless, I have attempted to provide a brief overview.
 
 In addition, here's an example of an affiliate website so you can better understand the purpose of the final product:
