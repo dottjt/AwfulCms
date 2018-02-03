@@ -2,7 +2,7 @@
 
 **Note: This thing is sufficiently complex and does significantly more than can be summarised.** Below I have provided a layman's overview of the project so you can better understand it :+1:
 
-In addition, here's an example of an affiliate website (the link may potentially be broken or the website incomplete, as I add and test features):
+In addition, here's an example of an affiliate website (the link may potentially be broken as I change things around):
 
 https://awfulchristmas.com/
 
