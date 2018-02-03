@@ -1,6 +1,6 @@
 **Note: These files are merely for potential employers to see my code**. The actual updated project is maintained within a private repository, and many critical config files have been removed. 
 
-**Note: This thing is sufficiently complex and does significantly more than can be summarised.** Regardless, I have attempted to provide a brief overview.
+**Note: This thing is sufficiently complex and does significantly more than can be summarised.** Below I have provided a layman's overview of the project so you can better understand it :) 
 
 In addition, here's an example of an affiliate website so you can better understand the purpose of the final product:
 
