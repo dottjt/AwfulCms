@@ -28,6 +28,8 @@ This stack includes:
 - Nginx Server / Linode VPS
 - AWS S3 Bucket
 
+The Awful Manager Elm application is HUGE. It's easily within the top 50 largest Elm applications ever created.
+
 I decided to build the core web applications with Phoenix Framework so that it would require minimal resources to build, run and maintain on the server. 
 
 Elixir has built in concurrency, scales better than anything else I know and has the developer efficiency of Ruby on Rails whilst being 10x faster. 
