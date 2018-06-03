@@ -1,3 +1,7 @@
+# Awful 
+
+> Elm, Elixir, Phoenix, SASS, Brunch
+
 **Note: These files are merely for potential employers to see my code**. The actual updated project is maintained within a private repository, and many critical config files have been removed. 
 
 **Note: This thing is sufficiently complex and does significantly more than can be summarised.** Below I have provided a layman's overview of the project so you can better understand it :+1:
